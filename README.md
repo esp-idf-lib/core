@@ -15,7 +15,7 @@ repository.
 
 ## Questions or discussions
 
-For questions or discussions, use [discussions](../discussions) in this
+For questions or discussions, use [discussions](../../discussions) in this
 repository.
 
 ## Requesting new driver
