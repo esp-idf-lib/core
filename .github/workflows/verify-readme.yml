@@ -1,0 +1,26 @@
+---
+name: Verify README.md is up-to-date
+
+on:
+  push:
+
+jobs:
+  verify-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+          bundler-cache: true
+
+      - name: Generate README.md and make a diff
+        run: |
+          bundle exec rake readme > README.md.new
+          diff -u README.md README.md.new
+          if [ $? -ne 0 ]; then
+            exit 1
+          fi
