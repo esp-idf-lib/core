@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "open3"
+require "yaml"
 
 class EIL
   # A class represents esp-idf-lib components
@@ -52,6 +53,18 @@ class EIL
     def badge(workflow_file)
       workflow_name = workflow_file.split(".").first
       "[![#{workflow_name}](#{badge_svg_url(workflow_file)})](#{workflow_url(workflow_file)})"
+    end
+
+    def eil
+      YAML.safe_load(File.read(EIL.root / path / ".eil.yml"))
+    end
+
+    def groups
+      eil["groups"]
+    end
+
+    def group_of?(group)
+      eil["groups"].include? group
     end
 
     def self.all

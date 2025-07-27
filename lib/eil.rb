@@ -1,4 +1,5 @@
 require_relative "eil/component"
+require_relative "eil/groups"
 
 require "pathname"
 

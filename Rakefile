@@ -19,6 +19,10 @@ def components
   @components = EIL::Component.all
 end
 
+def groups
+  EIL::Groups.all
+end
+
 def erb
   template_file = "README.md.erb"
   ERB.new(File.read(template_file), trim_mode: "<>")
