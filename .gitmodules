@@ -1,0 +1,282 @@
+[submodule "components/ads111x"]
+	path = components/ads111x
+	url = git@github.com:esp-idf-lib/ads111x.git
+[submodule "components/ads130e08"]
+	path = components/ads130e08
+	url = git@github.com:esp-idf-lib/ads130e08.git
+[submodule "components/aht"]
+	path = components/aht
+	url = git@github.com:esp-idf-lib/aht.git
+[submodule "components/am2320"]
+	path = components/am2320
+	url = git@github.com:esp-idf-lib/am2320.git
+[submodule "components/bh1750"]
+	path = components/bh1750
+	url = git@github.com:esp-idf-lib/bh1750.git
+[submodule "components/bh1900nux"]
+	path = components/bh1900nux
+	url = git@github.com:esp-idf-lib/bh1900nux.git
+[submodule "components/bme680"]
+	path = components/bme680
+	url = git@github.com:esp-idf-lib/bme680.git
+[submodule "components/bmp180"]
+	path = components/bmp180
+	url = git@github.com:esp-idf-lib/bmp180.git
+[submodule "components/bmp280"]
+	path = components/bmp280
+	url = git@github.com:esp-idf-lib/bmp280.git
+[submodule "components/button"]
+	path = components/button
+	url = git@github.com:esp-idf-lib/button.git
+[submodule "components/calibration"]
+	path = components/calibration
+	url = git@github.com:esp-idf-lib/calibration.git
+[submodule "components/ccs811"]
+	path = components/ccs811
+	url = git@github.com:esp-idf-lib/ccs811.git
+[submodule "components/color"]
+	path = components/color
+	url = git@github.com:esp-idf-lib/color.git
+[submodule "components/dht"]
+	path = components/dht
+	url = git@github.com:esp-idf-lib/dht.git
+[submodule "components/dps310"]
+	path = components/dps310
+	url = git@github.com:esp-idf-lib/dps310.git
+[submodule "components/ds1302"]
+	path = components/ds1302
+	url = git@github.com:esp-idf-lib/ds1302.git
+[submodule "components/ds1307"]
+	path = components/ds1307
+	url = git@github.com:esp-idf-lib/ds1307.git
+[submodule "components/ds18x20"]
+	path = components/ds18x20
+	url = git@github.com:esp-idf-lib/ds18x20.git
+[submodule "components/ds3231"]
+	path = components/ds3231
+	url = git@github.com:esp-idf-lib/ds3231.git
+[submodule "components/ds3502"]
+	path = components/ds3502
+	url = git@github.com:esp-idf-lib/ds3502.git
+[submodule "components/encoder"]
+	path = components/encoder
+	url = git@github.com:esp-idf-lib/encoder.git
+[submodule "components/esp_idf_lib_helpers"]
+	path = components/esp_idf_lib_helpers
+	url = git@github.com:esp-idf-lib/esp_idf_lib_helpers.git
+[submodule "components/example"]
+	path = components/example
+	url = git@github.com:esp-idf-lib/example.git
+[submodule "components/framebuffer"]
+	path = components/framebuffer
+	url = git@github.com:esp-idf-lib/framebuffer.git
+[submodule "components/hd44780"]
+	path = components/hd44780
+	url = git@github.com:esp-idf-lib/hd44780.git
+[submodule "components/hdc1000"]
+	path = components/hdc1000
+	url = git@github.com:esp-idf-lib/hdc1000.git
+[submodule "components/hmc5883l"]
+	path = components/hmc5883l
+	url = git@github.com:esp-idf-lib/hmc5883l.git
+[submodule "components/ht16k33"]
+	path = components/ht16k33
+	url = git@github.com:esp-idf-lib/ht16k33.git
+[submodule "components/hts221"]
+	path = components/hts221
+	url = git@github.com:esp-idf-lib/hts221.git
+[submodule "components/hx711"]
+	path = components/hx711
+	url = git@github.com:esp-idf-lib/hx711.git
+[submodule "components/i2cdev"]
+	path = components/i2cdev
+	url = git@github.com:esp-idf-lib/i2cdev.git
+[submodule "components/icm42670"]
+	path = components/icm42670
+	url = git@github.com:esp-idf-lib/icm42670.git
+[submodule "components/impulse_sensor"]
+	path = components/impulse_sensor
+	url = git@github.com:esp-idf-lib/impulse_sensor.git
+[submodule "components/ina219"]
+	path = components/ina219
+	url = git@github.com:esp-idf-lib/ina219.git
+[submodule "components/ina260"]
+	path = components/ina260
+	url = git@github.com:esp-idf-lib/ina260.git
+[submodule "components/ina3221"]
+	path = components/ina3221
+	url = git@github.com:esp-idf-lib/ina3221.git
+[submodule "components/l3gx"]
+	path = components/l3gx
+	url = git@github.com:esp-idf-lib/l3gx.git
+[submodule "components/lc709203f"]
+	path = components/lc709203f
+	url = git@github.com:esp-idf-lib/lc709203f.git
+[submodule "components/led_strip"]
+	path = components/led_strip
+	url = git@github.com:esp-idf-lib/led_strip.git
+[submodule "components/led_strip_spi"]
+	path = components/led_strip_spi
+	url = git@github.com:esp-idf-lib/led_strip_spi.git
+[submodule "components/lib8tion"]
+	path = components/lib8tion
+	url = git@github.com:esp-idf-lib/lib8tion.git
+[submodule "components/lm75"]
+	path = components/lm75
+	url = git@github.com:esp-idf-lib/lm75.git
+[submodule "components/ls7366r"]
+	path = components/ls7366r
+	url = git@github.com:esp-idf-lib/ls7366r.git
+[submodule "components/lsm303"]
+	path = components/lsm303
+	url = git@github.com:esp-idf-lib/lsm303.git
+[submodule "components/max1704x"]
+	path = components/max1704x
+	url = git@github.com:esp-idf-lib/max1704x.git
+[submodule "components/max31725"]
+	path = components/max31725
+	url = git@github.com:esp-idf-lib/max31725.git
+[submodule "components/max31855"]
+	path = components/max31855
+	url = git@github.com:esp-idf-lib/max31855.git
+[submodule "components/max31865"]
+	path = components/max31865
+	url = git@github.com:esp-idf-lib/max31865.git
+[submodule "components/max7219"]
+	path = components/max7219
+	url = git@github.com:esp-idf-lib/max7219.git
+[submodule "components/mcp23008"]
+	path = components/mcp23008
+	url = git@github.com:esp-idf-lib/mcp23008.git
+[submodule "components/mcp23x17"]
+	path = components/mcp23x17
+	url = git@github.com:esp-idf-lib/mcp23x17.git
+[submodule "components/mcp342x"]
+	path = components/mcp342x
+	url = git@github.com:esp-idf-lib/mcp342x.git
+[submodule "components/mcp4725"]
+	path = components/mcp4725
+	url = git@github.com:esp-idf-lib/mcp4725.git
+[submodule "components/mcp960x"]
+	path = components/mcp960x
+	url = git@github.com:esp-idf-lib/mcp960x.git
+[submodule "components/mcp9808"]
+	path = components/mcp9808
+	url = git@github.com:esp-idf-lib/mcp9808.git
+[submodule "components/mhz19b"]
+	path = components/mhz19b
+	url = git@github.com:esp-idf-lib/mhz19b.git
+[submodule "components/mp2660"]
+	path = components/mp2660
+	url = git@github.com:esp-idf-lib/mp2660.git
+[submodule "components/mpu6050"]
+	path = components/mpu6050
+	url = git@github.com:esp-idf-lib/mpu6050.git
+[submodule "components/ms5611"]
+	path = components/ms5611
+	url = git@github.com:esp-idf-lib/ms5611.git
+[submodule "components/noise"]
+	path = components/noise
+	url = git@github.com:esp-idf-lib/noise.git
+[submodule "components/onewire"]
+	path = components/onewire
+	url = git@github.com:esp-idf-lib/onewire.git
+[submodule "components/pca9557"]
+	path = components/pca9557
+	url = git@github.com:esp-idf-lib/pca9557.git
+[submodule "components/pca9632"]
+	path = components/pca9632
+	url = git@github.com:esp-idf-lib/pca9632.git
+[submodule "components/pca9685"]
+	path = components/pca9685
+	url = git@github.com:esp-idf-lib/pca9685.git
+[submodule "components/pcf8563"]
+	path = components/pcf8563
+	url = git@github.com:esp-idf-lib/pcf8563.git
+[submodule "components/pcf8574"]
+	path = components/pcf8574
+	url = git@github.com:esp-idf-lib/pcf8574.git
+[submodule "components/pcf8575"]
+	path = components/pcf8575
+	url = git@github.com:esp-idf-lib/pcf8575.git
+[submodule "components/pcf8591"]
+	path = components/pcf8591
+	url = git@github.com:esp-idf-lib/pcf8591.git
+[submodule "components/qmc5883l"]
+	path = components/qmc5883l
+	url = git@github.com:esp-idf-lib/qmc5883l.git
+[submodule "components/qmi8658c"]
+	path = components/qmi8658c
+	url = git@github.com:esp-idf-lib/qmi8658c.git
+[submodule "components/qmp6988"]
+	path = components/qmp6988
+	url = git@github.com:esp-idf-lib/qmp6988.git
+[submodule "components/rda5807m"]
+	path = components/rda5807m
+	url = git@github.com:esp-idf-lib/rda5807m.git
+[submodule "components/scd30"]
+	path = components/scd30
+	url = git@github.com:esp-idf-lib/scd30.git
+[submodule "components/scd4x"]
+	path = components/scd4x
+	url = git@github.com:esp-idf-lib/scd4x.git
+[submodule "components/sfa3x"]
+	path = components/sfa3x
+	url = git@github.com:esp-idf-lib/sfa3x.git
+[submodule "components/sgm58031"]
+	path = components/sgm58031
+	url = git@github.com:esp-idf-lib/sgm58031.git
+[submodule "components/sgp40"]
+	path = components/sgp40
+	url = git@github.com:esp-idf-lib/sgp40.git
+[submodule "components/sht3x"]
+	path = components/sht3x
+	url = git@github.com:esp-idf-lib/sht3x.git
+[submodule "components/sht4x"]
+	path = components/sht4x
+	url = git@github.com:esp-idf-lib/sht4x.git
+[submodule "components/si7021"]
+	path = components/si7021
+	url = git@github.com:esp-idf-lib/si7021.git
+[submodule "components/sts21"]
+	path = components/sts21
+	url = git@github.com:esp-idf-lib/sts21.git
+[submodule "components/sts3x"]
+	path = components/sts3x
+	url = git@github.com:esp-idf-lib/sts3x.git
+[submodule "components/tca6424a"]
+	path = components/tca6424a
+	url = git@github.com:esp-idf-lib/tca6424a.git
+[submodule "components/tca9548"]
+	path = components/tca9548
+	url = git@github.com:esp-idf-lib/tca9548.git
+[submodule "components/tca95x5"]
+	path = components/tca95x5
+	url = git@github.com:esp-idf-lib/tca95x5.git
+[submodule "components/tda74xx"]
+	path = components/tda74xx
+	url = git@github.com:esp-idf-lib/tda74xx.git
+[submodule "components/tps63101x"]
+	path = components/tps63101x
+	url = git@github.com:esp-idf-lib/tps63101x.git
+[submodule "components/tsl2561"]
+	path = components/tsl2561
+	url = git@github.com:esp-idf-lib/tsl2561.git
+[submodule "components/tsl2591"]
+	path = components/tsl2591
+	url = git@github.com:esp-idf-lib/tsl2591.git
+[submodule "components/tsl4531"]
+	path = components/tsl4531
+	url = git@github.com:esp-idf-lib/tsl4531.git
+[submodule "components/tsys01"]
+	path = components/tsys01
+	url = git@github.com:esp-idf-lib/tsys01.git
+[submodule "components/ultrasonic"]
+	path = components/ultrasonic
+	url = git@github.com:esp-idf-lib/ultrasonic.git
+[submodule "components/veml7700"]
+	path = components/veml7700
+	url = git@github.com:esp-idf-lib/veml7700.git
+[submodule "components/wiegand"]
+	path = components/wiegand
+	url = git@github.com:esp-idf-lib/wiegand.git
