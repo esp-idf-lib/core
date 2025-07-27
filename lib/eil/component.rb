@@ -58,6 +58,18 @@ class EIL
       "[![#{workflow_name}](#{badge_svg_url(workflow_file)})](#{workflow_url(workflow_file)})"
     end
 
+    def esp_component_url
+      "#{ESP_COMPONENT_REGISTRY_URL}/components/#{fqdn}"
+    end
+
+    def badge_esp_component_svg_url
+      "#{esp_component_url}/badge.svg"
+    end
+    def badge_esp_component_registry
+      #[![Component Registry](https://components.espressif.com/components/esp-idf-lib/hmc5883l/badge.svg)](https://components.espressif.com/components/esp-idf-lib/hmc5883l)
+      "[![Component Registry](#{badge_esp_component_svg_url})](#{esp_component_url})"
+    end
+
     def eil
       YAML.safe_load(File.read(EIL.root / path / ".eil.yml"))
     end
