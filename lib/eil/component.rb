@@ -7,6 +7,8 @@ class EIL
   # A class represents esp-idf-lib components
   class Component
 
+    @@git_submodule_result = []
+
     ORG = "esp-idf-lib"
     GITHUB_URL = "https://github.com"
     GITHUB_PAGES_URL = "https://esp-idf-lib.github.io"
@@ -77,18 +79,20 @@ class EIL
     end
 
     def self.all
+      return @@git_submodule_result unless @@git_submodule_result.empty?
+
       stdout, stderr, status = Open3.capture3("git submodule")
       raise StandardError, "failed to run `git submodule`: #{stderr}" if status != 0
 
-      memo = []
+      @@git_submodule_result = []
       stdout.each_line(chomp: true) do |line|
         # 1d24b0da13e9c0aae9ad985e4348d2fe50263e3c components/tda74xx (1.0.3-2-g1d24b0d)
         component_path = line.split(" ")[1]
         next unless component_path.start_with? "components"
 
-        memo << Component.new(component_path.split("/").last, component_path)
+        @@git_submodule_result << Component.new(component_path.split("/").last, component_path)
       end
-      memo
+      @@git_submodule_result
     end
   end
 end
