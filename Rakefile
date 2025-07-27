@@ -8,7 +8,7 @@ require "erb"
 require "redcarpet"
 
 $LOAD_PATH.unshift("lib")
-require "eil/component"
+require "eil"
 
 RSpec::Core::RakeTask.new(:spec)
 RuboCop::RakeTask.new
@@ -16,7 +16,7 @@ RuboCop::RakeTask.new
 def components
   return @components if @components
 
-  @components = File.readlines("components.txt").sort.map { |line| EIL::Component.new(line) }
+  @components = EIL::Component.all
 end
 
 def erb
