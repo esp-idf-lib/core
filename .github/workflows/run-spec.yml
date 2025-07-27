@@ -1,0 +1,24 @@
+---
+name: Run rspec
+
+on:
+  push:
+
+jobs:
+  run-rspec:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Setup ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+          bundler-cache: true
+
+      - name: Run rspec
+        run: |
+          bundle exec rake spec
