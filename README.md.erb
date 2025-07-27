@@ -46,10 +46,10 @@ Part of them ported from [esp-open-rtos](https://github.com/SuperHouse/esp-open-
 <% groups.each do |group| %>
 ### <%= group["description"] %>
 
-| Name | URLs | Status |
-|------|------|--------|
+| Name | Description | Status |
+|------|-------------|--------|
 <% components.select { |c| c.group_of? group["name"] }.each do |c| %>
-| [<%= c.name %>](<%= c.repo_url %>) | [Issues](<%= c.issues_url %>) [Documentation](<%= c.doc_url %>)| <%= c.badge("build.yml") %> <%= c.badge("build-docs.yml") %> |
+| [<%= c.name %>](<%= c.repo_url %>) | <%= c.description %> ([Documentation](<%= c.doc_url %>)) | <%= c.badge("build.yml") %> <%= c.badge("build-docs.yml") %> |
 <% end %>
 
 <% end %>

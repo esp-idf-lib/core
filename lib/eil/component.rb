@@ -78,6 +78,10 @@ class EIL
       eil["groups"].include? group
     end
 
+    def description
+      eil["description"]
+    end
+
     def self.all
       return @@git_submodule_result unless @@git_submodule_result.empty?
 
