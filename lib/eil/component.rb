@@ -6,6 +6,7 @@ require "yaml"
 class EIL
   # A class represents esp-idf-lib components
   class Component
+
     ORG = "esp-idf-lib"
     GITHUB_URL = "https://github.com"
     GITHUB_PAGES_URL = "https://esp-idf-lib.github.io"
@@ -57,6 +58,14 @@ class EIL
 
     def eil
       YAML.safe_load(File.read(EIL.root / path / ".eil.yml"))
+    end
+
+    def contributors
+      eil["copyrights"].map { |c| c["name"] }
+    end
+
+    def contributed_by?(name)
+      contributors.include? name
     end
 
     def groups
