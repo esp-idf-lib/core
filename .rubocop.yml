@@ -1,0 +1,38 @@
+---
+AllCops:
+  TargetRubyVersion: 3.1
+  NewCops: enable
+  # enable detailed explanations available in cops
+  # the default output is not enough to understand what is wrong
+  DisplayCopNames: true
+  ExtraDetails: true
+  DisplayStyleGuide: true
+
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: double_quotes
+
+Style/SymbolArray:
+  # perefer brackets for `grep-ability`
+  EnforcedStyle: brackets
+
+Layout/LineLength:
+  Exclude: []
+  # ignore heredoc for readability
+  AllowHeredoc: true
+  # URLs are almost always long
+  AllowURI: true
+  URISchemes:
+    - http
+    - https
+    - git
+    - ftp
+  IgnoreCopDirectives: true
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*.rb
+    - "*.gemspec"
