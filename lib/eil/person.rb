@@ -34,7 +34,12 @@ class EIL
     end
 
     def self.yaml
-      YAML.safe_load(File.read(PERSONS_YML))
+      persons = YAML.safe_load(File.read(PERSONS_YML))
+      persons.sort do |a, b|
+        name_a = a.key?("full_name") ? a["full_name"] : a["name"]
+        name_b = b.key?("full_name") ? b["full_name"] : b["name"]
+        name_a <=> name_b
+      end
     end
 
     def self.all
