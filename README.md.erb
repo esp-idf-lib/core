@@ -24,8 +24,13 @@ TBW
 
 ## Components
 
+<% groups.each do |group| %>
+### <%= group["description"] %>
+
 | Name | URLs | Status |
 |------|------|--------|
-<% components.each do |c| %>
+<% components.select { |c| c.group_of? group["name"] }.each do |c| %>
 | [<%= c.name %>](<%= c.repo_url %>) | [Issues](<%= c.issues_url %>) [Documentation](<%= c.doc_url %>)| <%= c.badge("build.yml") %> <%= c.badge("build-docs.yml") %> |
+<% end %>
+
 <% end %>
