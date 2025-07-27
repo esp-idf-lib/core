@@ -1,6 +1,6 @@
 # The core repository of `esp-idf-lib`
 
-This is the core repository of [esp-idf-lib](https://github.com/esp-idf-lib/).
+This is the core repository of [esp-idf-lib](https://github.com/esp-idf-lib/). The organization is the successor of [UncleRus/esp-idf-lib](https://github.com/UncleRus/esp-idf-lib).
 
 ## Supported versions of frameworks and devices
 
@@ -245,3 +245,48 @@ Part of them ported from [esp-open-rtos](https://github.com/SuperHouse/esp-open-
 | [max1704x](https://github.com/esp-idf-lib/max1704x) | [Issues](https://github.com/esp-idf-lib/max1704x/issues) [Documentation](https://esp-idf-lib.github.io/max1704x)| [![build](https://github.com/esp-idf-lib/max1704x/actions/workflows/build.yml/badge.svg)](https://github.com/esp-idf-lib/max1704x/actions/workflows/build.yml) [![build-docs](https://github.com/esp-idf-lib/max1704x/actions/workflows/build-docs.yml/badge.svg)](https://github.com/esp-idf-lib/max1704x/actions/workflows/build-docs.yml) |
 | [mp2660](https://github.com/esp-idf-lib/mp2660) | [Issues](https://github.com/esp-idf-lib/mp2660/issues) [Documentation](https://esp-idf-lib.github.io/mp2660)| [![build](https://github.com/esp-idf-lib/mp2660/actions/workflows/build.yml/badge.svg)](https://github.com/esp-idf-lib/mp2660/actions/workflows/build.yml) [![build-docs](https://github.com/esp-idf-lib/mp2660/actions/workflows/build-docs.yml/badge.svg)](https://github.com/esp-idf-lib/mp2660/actions/workflows/build-docs.yml) |
 
+
+## Maintainers
+
+  - [Ruslan V. Uss](https://github/UncleRus) `ads111x` `aht` `am2320` `bh1750` `bh1900nux` `bme680` `bmp180` `bmp280` `button` `calibration` `ccs811` `dht` `ds1302` `ds1307` `ds18x20` `ds3231` `ds3502` `encoder` `framebuffer` `hd44780` `hdc1000` `hmc5883l` `hx711` `i2cdev` `ina219` `ina260` `ina3221` `led_strip` `led_strip_spi` `max31725` `max31855` `max31865` `max7219` `mcp23008` `mcp23x17` `mcp342x` `mcp4725` `mcp960x` `mcp9808` `mpu6050` `ms5611` `onewire` `pca9557` `pca9685` `pcf8563` `pcf8574` `pcf8575` `pcf8591` `qmc5883l` `qmp6988` `rda5807m` `scd30` `scd4x` `sfa3x` `sgp40` `sht3x` `sht4x` `si7021` `sts21` `sts3x` `tca6424a` `tca9548` `tca95x5` `tda74xx` `tsl2561` `tsl4531` `tsys01` `ultrasonic` `wiegand`
+  - [Tomoyuki Sakurai](https://github/trombik) `dps310` `esp_idf_lib_helpers` `example` `led_strip_spi` `lm75`
+  - [Lucio Tarantino](https://github/dianlight) `ads111x`
+  - [Andrej Krutak](https://github/andree182) `bh1750`
+  - [Gunar Schorcht](https://github/gschorcht) `bme680` `ccs811` `sht3x` `sts3x`
+  - Frank Bargstedt `bmp180`
+  - [sheinz](https://github/sheinz) `bmp280`
+  - [FastLED project](https://github/FastLED) `color` `lib8tion` `noise`
+  - [jsuiker](https://github/jsuiker) `dht`
+  - Pavel Merzlyakov `ds1302`
+  - [Alex Stewart](https://github/astewart-consensus) `ds18x20`
+  - GrzegorzH `ds18x20`
+  - [BhuvanchandraD](https://github/bhuvanchandra) `ds3231`
+  - RichardA `ds3231`
+  - [Zaltora](https://github/Zaltora) `ina3221`
+  - [BernhardG](https://gitlab.com/mrnice) `ms5611`
+  - zeroday `onewire`
+  - [Thanh Pham](https://github/panoti) `pcf8591`
+  - [Sensirion AG](https://github/Sensirion) `scd30` `scd4x` `sfa3x`
+  - [Nate Usher](https://github/nated0g) `scd30`
+  - [Brian Schwind](https://github/bschwind) `tsl2561` `tsl4531`
+  - [Julian Doerner](https://github/juliandoerner) `tsl2591`
+  - [Erriez](https://github/Erriez) `mhz19b`
+  - [David Douard](https://github/douardda) `mhz19b`
+  - [Joshua Kallus](https://github/Jkallus) `ls7366r`
+  - [Alexander Bodenseher](https://github/saasaa) `hts221`
+  - [Timofei Korostelev](https://github/chudsaviet) `ht16k33`
+  - [Jose Manuel Perez](https://github/jmpmscorp) `lc709203f` `sgm58031`
+  - [Weslley Duarte](https://github/weslleymfd) `ads130e08`
+  - [Jan Veeh](https://github/janveeh) `icm42670`
+  - [Marc Luehr](https://github/th3link) `veml7700`
+  - [Joshua Butler](https://github/shuki25) `max1704x`
+  - [Raghav Jha](https://github/horsemann07) `mpu6050`
+  - [Jeff Rowberg](https://www.i2cdevlib.com/) `mpu6050`
+  - Angelo Elias Dalzotto `mpu6050`
+  - Gabriel Boni Vicari `mpu6050`
+  - [Grupo de Pesquisa em Cultura Digital](http://gepid.upf.br/) `mpu6050`
+  - [Christian Skjerning](https://github/slimcdk) `sts3x`
+  - [Jakub Turek](https://github/QB4-dev) `impulse_sensor` `l3gx` `lsm303` `pca9632`
+  - [Manuel Markwort](https://github/mmarkwort) `mp2660` `tps63101x`
+  - [Cedric von Gunten](https://github/vonguced) `qmp6988`
+  - [xyzroe](https://github/xyzroe) `qmi8658c`
