@@ -246,7 +246,7 @@ Part of them ported from [esp-open-rtos](https://github.com/SuperHouse/esp-open-
 | [mp2660](https://github.com/esp-idf-lib/mp2660) | Driver for MP2660 5V USB, 500mA, I2C-Controlled Linear Charger with Power Path Management for Single-Cell Li-Ion Battery ([Documentation](https://esp-idf-lib.github.io/mp2660)) | [![build](https://github.com/esp-idf-lib/mp2660/actions/workflows/build.yml/badge.svg)](https://github.com/esp-idf-lib/mp2660/actions/workflows/build.yml) [![build-docs](https://github.com/esp-idf-lib/mp2660/actions/workflows/build-docs.yml/badge.svg)](https://github.com/esp-idf-lib/mp2660/actions/workflows/build-docs.yml) |
 
 
-## Maintainers
+## Contributors
 
   - [Alex Stewart](https://github/astewart-consensus) `ds18x20`
   - [Alexander Bodenseher](https://github/saasaa) `hts221`
