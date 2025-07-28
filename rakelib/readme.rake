@@ -48,11 +48,13 @@ end
 # Generate HTML from `README.md.erb`.
 #
 # ```sh
-# bundle exec rake readme_html
+# bundle exec rake readme:html
 # ```
-desc "Generate README.html"
-task :readme_html do
-  renderer = Redcarpet::Render::HTML.new(prettify: true)
-  markdown = Redcarpet::Markdown.new(renderer, fenced_code_blocks: true, tables: true)
-  puts markdown.render(erb.result)
+namespace :readme do
+  desc "Generate README.html"
+  task :html do
+    renderer = Redcarpet::Render::HTML.new(prettify: true)
+    markdown = Redcarpet::Markdown.new(renderer, fenced_code_blocks: true, tables: true)
+    puts markdown.render(erb.result)
+  end
 end
