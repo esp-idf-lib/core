@@ -7,7 +7,6 @@ This is the core repository of [esp-idf-lib](https://github.com/esp-idf-lib/). T
 | Chip     | Framework        | Versions                                                                                                                                         |
 | -------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | ESP32-xx | ESP-IDF          | All officially supported versions (see [Support Period Policy](https://github.com/espressif/esp-idf/blob/master/SUPPORT_POLICY.md)) and `master` |
-| ESP8266  | ESP8266 RTOS SDK | `master`, v3.4                                                                                                                                   |
 
 ## Purpose
 
