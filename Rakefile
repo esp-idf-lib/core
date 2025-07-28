@@ -1,9 +1,13 @@
 # frozen_string_literal: true
 
-require "rubocop/rake_task"
 require "rspec/core/rake_task"
-require "pry"
 require "rake/clean"
+begin
+  require "rubocop/rake_task"
+  require "pry"
+rescue LoadError
+  # ignore LoadError if gems for development are not available
+end
 
 $LOAD_PATH.unshift("lib")
 require "eil"
