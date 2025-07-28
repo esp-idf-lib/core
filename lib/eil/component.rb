@@ -19,6 +19,7 @@ class EIL
     def initialize(name)
       @name = name.chomp
       @path = EIL.root / "components" / name
+      raise ArgumentError, "path #{@path} does not exist or not a directory" unless @path.exist? && @path.directory?
     end
 
     def org

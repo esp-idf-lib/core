@@ -9,6 +9,20 @@ RSpec.describe EIL::Component do
     end
   end
 
+  describe ".new" do
+    context "when the component does not exist" do
+      it "raises" do
+        expect { described_class.new("foo") }.to raise_error ArgumentError
+      end
+    end
+
+    context "when the component exists" do
+      it "does not raise" do
+        expect { described_class.new("esp_idf_lib_helpers") }.not_to raise_error ArgumentError
+      end
+    end
+  end
+
   describe "#eil" do
     it "returns hashed YAML" do
       expect(c.eil).to be_a Hash
