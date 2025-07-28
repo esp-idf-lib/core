@@ -29,7 +29,7 @@ end
 
 def person_credit(person)
   name = person.full_name ? person.full_name : person.name
-  name_url = person.gh_id ? "https://github/#{person.gh_id}" : person.url
+  name_url = person.gh_id ? "https://github.com/#{person.gh_id}" : person.url
   name_url ? "[#{name}](#{name_url})" : name
 end
 
