@@ -29,7 +29,7 @@ RSpec.describe EIL::Component do
 
   describe "#contributed_by?" do
     it "retruns true" do
-      c = described_class.new("esp_idf_lib_helpers", "components/esp_idf_lib_helpers")
+      c = described_class.new("esp_idf_lib_helpers")
       expect(c.contributed_by? "trombik").to be true
     end
   end

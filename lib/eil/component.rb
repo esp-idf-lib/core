@@ -16,9 +16,9 @@ class EIL
 
     attr_reader :name, :path
 
-    def initialize(name, path)
+    def initialize(name)
       @name = name.chomp
-      @path = path
+      @path = EIL.root / "components" / name
     end
 
     def org
@@ -71,7 +71,7 @@ class EIL
     end
 
     def eil
-      YAML.safe_load(File.read(EIL.root / path / ".eil.yml"))
+      YAML.safe_load(File.read(path / ".eil.yml"))
     end
 
     def contributors
@@ -106,7 +106,7 @@ class EIL
         component_path = line.split(" ")[1]
         next unless component_path.start_with? "components"
 
-        @@git_submodule_result << Component.new(component_path.split("/").last, component_path)
+        @@git_submodule_result << Component.new(component_path.split("/").last)
       end
       @@git_submodule_result
     end
