@@ -16,11 +16,11 @@ RSpec::Core::RakeTask.new(:spec)
 RuboCop::RakeTask.new
 
 # Add build directory and sdkconfig under examples to files to clean.
-CLEAN << FileList[
-  "components/examples/**/build",
-  "components/examples/**/sdkconfig",
-  "components/examples/**/sdkconfig.old",
+CLEAN << ::Rake::FileList[
+  "components/**/examples/**/build",
+  "components/**/examples/**/sdkconfig",
+  "components/**/examples/**/sdkconfig.old",
 ]
-
+binding.pry
 # files under `rakelib` with .rake extension are automatically loaded.
 # see `bundle exec rake -T` to see all the available tasks.
