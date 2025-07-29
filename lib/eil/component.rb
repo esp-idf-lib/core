@@ -72,7 +72,16 @@ class EIL
     end
 
     def eil
-      YAML.safe_load(File.read(path / ".eil.yml"))
+      return @eil if @eil
+
+      @eil = YAML.safe_load(File.read(path / ".eil.yml"))
+    end
+
+    ##
+    # Reload .eil.yml and refresh the state of the object. Call this method if
+    # .eil.yml might have been changed.
+    def reload
+      @eil = nil
     end
 
     def contributors
@@ -93,6 +102,10 @@ class EIL
 
     def description
       eil["description"]
+    end
+
+    def version
+      eil["version"]
     end
 
     def self.all
