@@ -1,5 +1,7 @@
 ---
 AllCops:
+  Exclude:
+    - components/**/*
   TargetRubyVersion: 3.1
   NewCops: enable
   # enable detailed explanations available in cops
@@ -11,6 +13,9 @@ AllCops:
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
 
 Style/StringLiteralsInInterpolation:
   EnforcedStyle: double_quotes
