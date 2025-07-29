@@ -44,13 +44,13 @@ Read [`gh` 101](#gh-101) section first if you are not familiar with `gh` CLI.
 * git
 * [gh](https://cli.github.com/)
 
-```sh
+```console
 bundle install
 ```
 
 > [!TIP]
 > Create an alias command to type less when executing `bundle exec`, such as
-> `be='bundle exec'`.
+> `alias be='bundle exec'`.
 
 ## `Rakefile`
 
@@ -59,13 +59,16 @@ bundle install
 
 ### Generating README.md
 
-Run `readme` target generates `README.md` from `README.md.erb`.
+Run `readme` target to generate `README.md` from `README.md.erb`.
 `README.md.erb` is the template to generate `README.md`.
 
 > [!CAUTION]
 > Do NOT edit `README.md`. Edit `README.md.erb` instead.
 
-```sh
+> [!NOTE]
+> A workflow verifies `README.md` is up-to-date. If not, the test fails.
+
+```console
 bundle exec rake readme
 ```
 
@@ -77,9 +80,14 @@ A typical workflow to update `README.md`:
 1. Generate `README.md` with `readme` target
 1. Commit `README.md` and `README.md.erb`
 
-```sh
+```console
+# edit the README.md.erb, NOT README.md
 vim README.md.erb
+
+# update README.md
 bundle exec rake readme > README.md
+
+# commit them
 git add README.md README.md.erb
 git commit -m "update README"
 ```
@@ -87,7 +95,7 @@ git commit -m "update README"
 Use `readme:html` target to generate HTML version of `README.md` for review in
 a browser.
 
-```sh
+```console
 bundle exec readme:html > README.html
 firefox README.htnml
 rm README.html
@@ -109,12 +117,14 @@ Run `release` target to release a component. `release` target will:
 of the version should be incremented. The following example increments `patch`
 version of `esp_idf_lib_helpers` component.
 
-```sh
+```console
 bundle execc rake 'release[esp_idf_lib_helpers,patch]'
 ```
 
 > [!CAUTION]
 > Quote the argument to avoid shell expansion.
+
+After creating the release branch:
 
 1. Open the repository page in a browser.
 2. Create a PR to merge the branch
@@ -122,26 +132,26 @@ bundle execc rake 'release[esp_idf_lib_helpers,patch]'
 
 Create a release from the branch:
 
-```sh
+```console
 gh release create `bin/eil-q version` --notes "Release `bin/eil-q version`" --title "Release `bin/eil-q version`"
 ```
 
 > [!NOTE]
 > `bin/eil-q` is a script to query `.eil.uml`. All repositories have it.
 
-GitHub Action workflows will:
+When the release is created, a GitHub Action workflows will:
 
 * publish the documentation
 * publish the component on ESP Component Registry
 
-Done.
+Now, the release is published.
 
 ### Cleaning files
 
 Run `clean` target to clean all the unnecessary files, such as build files of
 examples.
 
-```sh
+```console
 bundle exec rake clean
 ```
 
@@ -159,7 +169,7 @@ All the `gh` command requires authentication. Authenticate yourself with the
 following command.
 
 ```console
-echo echo 'your_token' | gh auth login --with-token
+echo 'your_token' | gh auth login --with-token
 ```
 
 > [!NOTE]
@@ -174,7 +184,7 @@ run workflows, among others.
 > Change the directory to the repository directory and run `gh` command.
 > When the working directory is not in the repository, use `--repo es-idf-lib/${REPO_NAME}`.
 
-```sh
+```console
 cd components/esp_idf_lib_helpers
 
 # opens the repository page in a browser
@@ -183,13 +193,13 @@ gh browse
 
 ### Listing workflows
 
-```sh
+```console
 gh workflow ls
 ```
 
 ### Running workflows
 
-```sh
+```console
 gh workflow run "Publish the component to ESP Component Registry"
 ```
 
