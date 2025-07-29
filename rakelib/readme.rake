@@ -16,9 +16,8 @@ def persons
 end
 
 def person_credit(person)
-
   # If the person has full name, use it. Otherwise use name.
-  name = person.full_name ? person.full_name : person.name
+  name = person.full_name || person.name
 
   # Link the name to one of available URLs.
   name_url = person.gh_id ? "https://github.com/#{person.gh_id}" : person.url
