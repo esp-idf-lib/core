@@ -23,3 +23,8 @@ CLEAN << ::Rake::FileList[
 ]
 # files under `rakelib` with .rake extension are automatically loaded.
 # see `bundle exec rake -T` to see all the available tasks.
+
+desc "Lists all the component names"
+task :list do
+  puts EIL::Component.all.map(&:name)
+end
