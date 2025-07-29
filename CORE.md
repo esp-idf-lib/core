@@ -8,11 +8,27 @@
     * [Releasing a component](#releasing-a-component)
     * [Cleaning files](#cleaning-files)
 * [`gh` 101](#gh-101)
+    * [Authentication](#authentication)
     * [Basics](#basics)
     * [Listing workflows](#listing-workflows)
     * [Running workflows](#running-workflows)
 
 <!-- vim-markdown-toc -->
+
+This repository is the core repository of all components. The repository has
+all the components as sub-modules.
+
+Clone the repository.
+
+```console
+git clone git@github.com:esp-idf-lib/core.git
+```
+
+Update the sub-modules.
+
+```console
+git submodule update --init --recursive
+```
 
 The operational workflows extensively use `rake` and `gh`.
 
@@ -134,6 +150,21 @@ bundle exec rake clean
 This section explains basic `gh` commands. See
 [the manual](https://cli.github.com/manual/gh) for reference.
 
+### Authentication
+
+Permission at the organization level is needed to manage the repository.
+Ask @trombik to obtain one.
+
+All the `gh` command requires authentication. Authenticate yourself with the
+following command.
+
+```console
+echo echo 'your_token' | gh auth login --with-token
+```
+
+> [!NOTE]
+> Replace `your_token` with the token.
+
 ### Basics
 
 `gh` automates many operations with GitHub. It can create issues, releases,
@@ -141,7 +172,6 @@ run workflows, among others.
 
 > [!NOTE]
 > Change the directory to the repository directory and run `gh` command.
-
 > When the working directory is not in the repository, use `--repo es-idf-lib/${REPO_NAME}`.
 
 ```sh
