@@ -58,6 +58,7 @@ Part of them ported from [esp-open-rtos](https://github.com/SuperHouse/esp-open-
 
 | Name | Description | Status |
 |------|-------------|--------|
+| [bmi160](https://github.com/esp-idf-lib/bmi160) | A template for esp-idf-lib component ([Documentation](https://esp-idf-lib.github.io/bmi160)) [![Component Registry](https://components.espressif.com/components/esp-idf-lib/bmi160/badge.svg)](https://components.espressif.com/components/esp-idf-lib/bmi160) | [![build](https://github.com/esp-idf-lib/bmi160/actions/workflows/build.yml/badge.svg)](https://github.com/esp-idf-lib/bmi160/actions/workflows/build.yml) [![build-docs](https://github.com/esp-idf-lib/bmi160/actions/workflows/build-docs.yml/badge.svg)](https://github.com/esp-idf-lib/bmi160/actions/workflows/build-docs.yml) |
 | [calibration](https://github.com/esp-idf-lib/calibration) | Multi-point calibration library ([Documentation](https://esp-idf-lib.github.io/calibration)) [![Component Registry](https://components.espressif.com/components/esp-idf-lib/calibration/badge.svg)](https://components.espressif.com/components/esp-idf-lib/calibration) | [![build](https://github.com/esp-idf-lib/calibration/actions/workflows/build.yml/badge.svg)](https://github.com/esp-idf-lib/calibration/actions/workflows/build.yml) [![build-docs](https://github.com/esp-idf-lib/calibration/actions/workflows/build-docs.yml/badge.svg)](https://github.com/esp-idf-lib/calibration/actions/workflows/build-docs.yml) |
 | [color](https://github.com/esp-idf-lib/color) | Common library for RGB and HSV colors ([Documentation](https://esp-idf-lib.github.io/color)) [![Component Registry](https://components.espressif.com/components/esp-idf-lib/color/badge.svg)](https://components.espressif.com/components/esp-idf-lib/color) | [![build](https://github.com/esp-idf-lib/color/actions/workflows/build.yml/badge.svg)](https://github.com/esp-idf-lib/color/actions/workflows/build.yml) [![build-docs](https://github.com/esp-idf-lib/color/actions/workflows/build-docs.yml/badge.svg)](https://github.com/esp-idf-lib/color/actions/workflows/build-docs.yml) |
 | [esp_idf_lib_helpers](https://github.com/esp-idf-lib/esp_idf_lib_helpers) | Common support library for esp-idf-lib ([Documentation](https://esp-idf-lib.github.io/esp_idf_lib_helpers)) [![Component Registry](https://components.espressif.com/components/esp-idf-lib/esp_idf_lib_helpers/badge.svg)](https://components.espressif.com/components/esp-idf-lib/esp_idf_lib_helpers) | [![build](https://github.com/esp-idf-lib/esp_idf_lib_helpers/actions/workflows/build.yml/badge.svg)](https://github.com/esp-idf-lib/esp_idf_lib_helpers/actions/workflows/build.yml) [![build-docs](https://github.com/esp-idf-lib/esp_idf_lib_helpers/actions/workflows/build-docs.yml/badge.svg)](https://github.com/esp-idf-lib/esp_idf_lib_helpers/actions/workflows/build-docs.yml) |
@@ -282,10 +283,11 @@ Part of them ported from [esp-open-rtos](https://github.com/SuperHouse/esp-open-
   - [Sensirion AG](https://github.com/Sensirion) `scd30` `scd4x` `sfa3x`
   - [Thanh Pham](https://github.com/panoti) `pcf8591`
   - [Timofei Korostelev](https://github.com/chudsaviet) `ht16k33`
-  - [Tomoyuki Sakurai](https://github.com/trombik) `dps310` `esp_idf_lib_helpers` `example` `led_strip_spi` `lm75`
+  - [Tomoyuki Sakurai](https://github.com/trombik) `bmi160` `dps310` `esp_idf_lib_helpers` `example` `led_strip_spi` `lm75`
   - [Weslley Duarte](https://github.com/weslleymfd) `ads130e08`
   - [Zaltora](https://github.com/Zaltora) `ina3221`
   - [jsuiker](https://github.com/jsuiker) `dht`
+  - [lukbieli](https://github.com/lukbieli) `bmi160`
   - [sheinz](https://github.com/sheinz) `bmp280`
   - [xyzroe](https://github.com/xyzroe) `qmi8658c`
   - zeroday `onewire`
