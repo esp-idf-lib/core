@@ -280,3 +280,6 @@
 [submodule "components/wiegand"]
 	path = components/wiegand
 	url = git@github.com:esp-idf-lib/wiegand.git
+[submodule "components/bmi160"]
+	path = components/bmi160
+	url = git@github.com:esp-idf-lib/bmi160.git
