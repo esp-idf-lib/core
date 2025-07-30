@@ -5,6 +5,7 @@
 * [Requirements](#requirements)
 * [`Rakefile`](#rakefile)
     * [Generating README.md](#generating-readmemd)
+    * [Running commands in each component](#running-commands-in-each-component)
     * [Releasing a component](#releasing-a-component)
     * [Cleaning files](#cleaning-files)
 * [`gh` 101](#gh-101)
@@ -103,6 +104,19 @@ rm README.html
 
 > [!CAUTION]
 > Do NOT commit `README.html`.
+
+### Running commands in each component
+
+Use `submodule:each` target, which runs a shell file in each component. The
+following command runs `commit.sh` in each component.
+
+```console
+bundle exec rake 'submodule:each[commit.sh]'
+```
+
+> [!NOTE]
+> The file is executed in a component directory. The working directory is
+> `components/${COMPONENT_NAME}`.
 
 ### Releasing a component
 
