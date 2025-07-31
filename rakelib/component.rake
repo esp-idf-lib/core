@@ -24,6 +24,7 @@ namespace :component do
   task :each, [:file] do |_t, args|
     file = Pathname.new(args[:file]).realpath
     EIL::Component.all.each do |component|
+      ENV["NAME"] = component.name
       enter_into component.path do
         sh "sh #{file}"
       end
