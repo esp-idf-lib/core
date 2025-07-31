@@ -110,6 +110,11 @@ rm README.html
 Use `submodule:each` target, which runs a shell file in each component. The
 following command runs `commit.sh` in each component.
 
+```sh
+# commit.sh
+commit -m "a commit"
+```
+
 ```console
 bundle exec rake 'submodule:each[commit.sh]'
 ```
@@ -117,6 +122,10 @@ bundle exec rake 'submodule:each[commit.sh]'
 > [!NOTE]
 > The file is executed in a component directory. The working directory is
 > `components/${COMPONENT_NAME}`.
+
+> [!TIP]
+> `NAME` environment variable is set to the component name so that you can use
+> it in the script.
 
 ### Releasing a component
 
