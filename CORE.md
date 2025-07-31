@@ -131,10 +131,10 @@ bundle exec rake 'submodule:each[commit.sh]'
 
 Run `release` target to release a component. `release` target will:
 
-* Create a release branch `release/$MAJOR.$MINOR.$PATH`
 * Increment version string in `.eil.yml` and `idf_component.yml`
-* Commit the changes to the branch
-* Push the branch to `origin`
+* Commit the changes to `main` branch
+* Push to `origin`
+* Create release
 
 `release` targets requires two arguments, name of the component and which part
 of the version should be incremented. The following example increments `patch`
@@ -146,21 +146,6 @@ bundle execc rake 'release[esp_idf_lib_helpers,patch]'
 
 > [!CAUTION]
 > Quote the argument to avoid shell expansion.
-
-After creating the release branch:
-
-1. Open the repository page in a browser.
-2. Create a PR to merge the branch
-3. Merge it when the checks pass
-
-Create a release from the branch:
-
-```console
-gh release create `bin/eil-q version` --notes "Release `bin/eil-q version`" --title "Release `bin/eil-q version`"
-```
-
-> [!NOTE]
-> `bin/eil-q` is a script to query `.eil.uml`. All repositories have it.
 
 When the release is created, a GitHub Action workflows will:
 

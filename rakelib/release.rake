@@ -43,15 +43,6 @@ def enter_into(dir)
   end
 end
 
-# Create and checkout new branch.
-#
-# @param branch_name [String] The branch name to check out.
-def checkout_release_branch(branch_name)
-  sh "git checkout -b #{branch_name.shellescape}" do |ok, _res|
-    raise StandardError, "failed to create #{branch_name}" unless ok
-  end
-end
-
 # Update .eil.yml and idf_component.yml with new version. Shows diff after the
 # modification.
 #
@@ -74,39 +65,35 @@ def commit_all(version)
   end
 end
 
-# Push everything to origin from the current branch.
-#
-# @param branch_name [String] The branch name to push
-def push_all(branch_name)
-  sh "git push --set-upstream origin #{branch_name.shellescape}" do |ok, _res|
-    raise StandardError, "failed to git push" unless ok
-  end
-end
-
 # Revert all the changes in the branch and remove the branch.
 #
-# @param branch_name [String] The branch name
-def revert(branch_name)
+def revert
   sh "git reset ."
   sh "git checkout ."
   sh "git checkout main"
-  sh "git branch -D #{branch_name.shellescape}" do |ok, _res|
-    raise StandardError, "failed to delete branch #{branch_name}" unless ok
-  end
 end
 
 desc "Release component `name`. `part` is one of `major`, `minor`, and `patch`"
 task :release, [:name, :part] do |_t, args|
   component = EIL::Component.new(args[:name])
   new_version = increment_version(component, args[:part])
-  branch_name = "release/#{new_version}"
+  release_title = "Release #{new_version}"
   enter_into component.path do
-    checkout_release_branch(branch_name)
+    sh "git checkout main"
     increment_version_of_files(new_version)
     commit_all(new_version)
-    push_all(branch_name)
+    sh "git push"
+    sh "gh release create #{new_version.shellescape} --notes #{release_title.shellescape} --title #{release_title.shellescape}"
   rescue StandardError => e
-    revert(branch_name)
+    revert
     raise e
+  end
+end
+
+desc "Release all components"
+task :release_all, [:part] do |_t, args|
+  EIL::Component.all.each do |component|
+    pp component.name
+    Rake::Task["release"].execute(name: component.name, part: args[:part])
   end
 end
