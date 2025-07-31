@@ -84,6 +84,7 @@ task :release, [:name, :part] do |_t, args|
     commit_all(new_version)
     sh "git push"
     sh "gh release create #{new_version.shellescape} --notes #{release_title.shellescape} --title #{release_title.shellescape}"
+    sh "git pull"
   rescue StandardError => e
     revert
     raise e
