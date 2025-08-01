@@ -230,7 +230,11 @@ git push -f
 ### C Code style
 
 We use a style for source files based on
-[Espressif IoT Development Framework Style Guide](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/contribute/style-guide.html).
+[Espressif IoT Development Framework Style Guide](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/contribute/style-guide.html)
+for new components.
+
+> [!NOTE] Older components use a different style. They have their own
+> rules.
 
 The style should be followed for all new code. In general, code can be
 considered "new code" when it makes up about 50% or more of the file(s)
@@ -244,6 +248,12 @@ To format your code in-place, run:
 ```console
 astyle --project --recursive '*.c,*.h'
 ```
+
+> [!TIP]
+> A CI verify the style. When you don't have `astyle` installed, see [`astyle`]
+> workflow's log (click [Action] > `astyle` > the workflow runs >
+> [validate-astyle / validate]. The log shows `diff` at the end. Apply the
+> diff to your code.
 
 ### `markdown` Code style
 
