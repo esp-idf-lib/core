@@ -11,15 +11,14 @@
     * [Suggesting enhancements](#suggesting-enhancements)
     * [Promoting the project](#promoting-the-project)
     * [Writing code](#writing-code)
+    * [Creating new component](#creating-new-component)
 * [Development Life Cycle](#development-life-cycle)
     * [Creating an Issue](#creating-an-issue)
     * [Creating a feature branch in your fork and develop](#creating-a-feature-branch-in-your-fork-and-develop)
     * [C Code style](#c-code-style)
     * [`markdown` Code style](#markdown-code-style)
-    * [`git` branch name convention](#git-branch-name-convention)
     * [Typical issues you will face in developments](#typical-issues-you-will-face-in-developments)
     * [Writing a commit message](#writing-a-commit-message)
-    * [Updating README.md](#updating-readmemd)
     * [Creating a Pull Request](#creating-a-pull-request)
 * [Licenses](#licenses)
     * [Acceptable licenses](#acceptable-licenses)
@@ -40,6 +39,7 @@ contributions you can make.
 * [Suggesting enhancements](#suggesting-enhancements)
 * [Promoting the project](#promoting-the-project)
 * [Writing code](#writing-code)
+* [Creating new component](#creating-new-component)
 
 ### Submitting a bug report
 
@@ -59,12 +59,12 @@ better. For example:
 * Captured signals by an oscilloscope or a signal analyser ([sigrok](https://sigrok.org/))
 
 A question as a bug report is okay but we expect bug reporters to do their
-homework. The homework include:
+homeworks. The homeworks include:
 
 * Reading the data sheets
 * Reading [the official documentation of `esp-idf`](https://docs.espressif.com/projects/esp-idf)
   (it's good, really)
-* Understanding C language in general
+* Understanding of C language in general
 
 For introductory C tutorials, see:
 
@@ -80,25 +80,8 @@ creating a Pull Request unless the bug is subtle, typos, or easy to reproduce
 and fix. Make sure to read [Development Life Cycle](#development-life-cycle)
 as a Pull Request must meet the same standards documented in the section.
 
-A GitHub Actions workflow,
-[pr-labeler-action](https://github.com/TimonVS/pr-labeler-action), is used to
-label PRs by branch name. Your fix branch should have prefixes defined in
-[.github/pr-labeler.yml](.github/pr-labeler.yml). Create a branch with one of
-the prefixes. If you are fixing a bug, your branch name should be `bugfix-`.
-The rest of branch name should be short, and descriptive. If the fix has
-related issues, the branch name should include them.
-
-See also [`git` branch name convention](#git-branch-name-convention).
-
 ```console
 git checkout -b bugfix-issue-1
-```
-
-Change the branch name before creating a PR if your branch name does not
-follow the convention.
-
-```console
-git branch --move bugfix-issue-1
 ```
 
 ### Writing documentation
@@ -125,8 +108,6 @@ Create a branch that documents features, or fixes existing documentations.
 git checkout -b doc-foo
 ```
 
-See also [`git` branch name convention](#git-branch-name-convention).
-
 ### Suggesting enhancements
 
 While we are not always able to write a driver for a chip, we still appreciate
@@ -148,6 +129,11 @@ If you find the project useful, we are interested in what you did with
 
 If you can write a driver for new chip, that would be great. Please read
 [Development Life Cycle](#development-life-cycle).
+
+### Creating new component
+
+Please see
+[About template-component](https://github.com/esp-idf-lib/template-component/blob/main/TEMPLATE_README.md).
 
 ## Development Life Cycle
 
@@ -178,10 +164,10 @@ by `atlassian` explains the workflow in details.
 Fork the repository and clone it on your machine.
 See [Fork a repo](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo).
 
-Create a feature branch in your fork from the `master` branch.
+Create a feature branch in your fork from the `main` branch.
 
 ```console
-git checkout master
+git checkout main
 ```
 
 Check out the feature branch. The feature branch name should start with
@@ -190,8 +176,6 @@ Check out the feature branch. The feature branch name should start with
 ```console
 git checkout -b feat-implement-foo
 ````
-
-See also [`git` branch name convention](#git-branch-name-convention).
 
 Write your code. Test the code in your physical test environment.  Commit your
 changes and push them to your remote fork on GitHub.
@@ -217,15 +201,15 @@ workflows include:
 * linting code and documentation
 
 You can see the test results in `Actions` page on your GitHub fork. To
-merge your changes to `master` branch, all the tests must pass.
+merge your changes to `main` branch, all the tests must pass.
 
-Make sure you are working on the latest `master` of `esp-idf-lib`. To sync the
-`master` in your fork and the latest `master` of `esp-idf-lib`, run:
+Make sure you are working on the latest `main` of the component. To sync the
+`main` in your fork and the latest `main` of the component, run:
 
 ```console
-git checkout master
+git checkout main
 git fetch upstream
-git reset --hard upstream/master
+git reset --hard upstream/main
 ```
 
 If your branch has many commits, consider `git rebase` to reduce the number of
@@ -234,61 +218,31 @@ commit history has many trial-and-error commits.
 
 ```console
 git checkout feat-implement-foo
-git rebase -i master
+git rebase -i main
 git push -f
 ```
 
-Note that `git rebase` rewrites the commit history. You should avoid `git
-rebase` after you asked someone to review your code because the reviewer needs
-additional steps to ensure the review result is included.
+> [!NOTE]
+> `git rebase` rewrites the commit history. You should avoid `git
+> rebase` after you asked someone to review your code because the reviewer needs
+> additional steps to ensure the review result is included.
 
 ### C Code style
 
-We use a style for source files based on [LLVM Coding Standards](https://llvm.org/docs/CodingStandards.html)
-except some cases, notably brace wrapping. Here is a brief list of the styles.
-
-* Use `snake_case`, not `CamelCase`
-* Use `SNAKE_CASE` in uppercase for macro name, e.g. `MACRO_NAME`.
-* Use spaces. The indent width is four
-* Use `\n`, or `LF` for line breaks
-* Use `//` for inline comments. Use `/* */` for multi line comments after an
-  empty line
-* Break before braces in *most cases* (functions, conditionals, control
-  statements, etc)
-* Always check given arguments
-* Always check return code, return value, or `errno`
-* Return `esp_err_t` from functions where possible
-* Document public functions, data types, and macros in header files
-* Use suffix `_t` for `typedef`, e.g. `foo_t`
-* Use suffix `_cb_t` for function `typedef`, e.g.`my_function_cb_t`
-* Use suffix `_s` for `struct`, e.g. `my_struct_s`
-* Wrap numbers in macro definition with parenthesis, e.g. `#define N_FOO (1)`
-* Use `#include <foo.h> for headers that are not part of the component, such
-  as `string.h`, `esp_log,h`, and `i2cdev.h`. Use `#include "foo.h" when the
-  header is private, i.e. the header is the part of the component.
+We use a style for source files based on
+[Espressif IoT Development Framework Style Guide](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/contribute/style-guide.html).
 
 The style should be followed for all new code. In general, code can be
 considered "new code" when it makes up about 50% or more of the file(s)
 involved. This is enough to break precedents in the existing code and use the
 current style guidelines.
 
-See an example source files under [`components/exmaple`](components/example)
-and, for complete rules, see [`.clang-format`](.clang-format) and the output
-of `clang-format --dump-config`.
-
-New code will be tested in the CI, using `clang-format` (currently `LLVM`
-version 10).
-
-To format your code without modifying the code, run:
-
-```console
-clang-format10 components/example/example.c
-```
+New code will be tested in the CI, using `astyle`.
 
 To format your code in-place, run:
 
 ```console
-clang-format10 -i components/example/example.c
+astyle --project --recursive '*.c,*.h'
 ```
 
 ### `markdown` Code style
@@ -325,37 +279,13 @@ output is shown below.
 examples/led_strip_spi/README.md:30: MD040 Fenced code blocks should have a language specified
 ```
 
-### `git` branch name convention
-
-We use the following convention for git branch name. Use one of branch name
-prefixes when creating a branch.
-
-| Branch name prefix | Description |
-|--------------------|-------------|
-| `feat-`, and `feature-` | A feature branch that implements feature(s), or add enhancement(s) to existing code |
-| `fix-`, and `bugfix-` | A bug fix branch that fixes bug(s). The rest of the branch name should include issue number, such as `fix-issue-1` |
-| `ci-` | A branch that implements enhancement(s), or fixes issue(s) in CI |
-| `chore-` | A branch that does not affect code or its behavior, such as updating `.gitignore` |
-| `doc-`, and `documentation-` | Adding or updating documentation only, such as documenting undocumented features, or fixing existing documentation(s) |
-
-A GitHub Actions workflow automatically labels PRs depending on the branch
-name prefixes so that the PR is automatically included in release notes.
-
-The rest of the branch name should be short, and descriptive. If your branch
-fixes, implements, or relates to, an Issue, include the Issue number. Say, if
-your branch fixes a bug reported Issue ${N}, the branch name should be
-`fix-issue-${N}` so that reviewer immediately understand there is a related
-Issue with your branch. Replace `${N}` with the Issue number, such as
-`fix-issue-123` when the Issue number is 123.
-
 ### Typical issues you will face in developments
 
 **Your code assumes a single target, such as `esp32`**. `esp-idf-lib` supports
 other targets, notably `esp8266`. Make sure the driver supports various other
 targets. If it cannot, such as the peripheral is not available on the target
 chip, your code should bailout during the build by using `#error` C
-preprocessor macro, and your driver must be excluded from the CI (TODO
-document how).
+preprocessor macro.
 
 **Your code assumes a single SDK**. `esp-idf-lib` supports `master` and stable
 versions of `esp-idf` and `ESP8266 RTOS SDK`. Generally, the SDKs retain
@@ -367,12 +297,6 @@ drivers written with [`i2cdev`](components/i2cdev) should work fine on ESP32
 and ESP8266, while SPI drivers need serious workarounds to support ESP8266.
 [`led_strip_spi`](components/led_strip_spi) attempted to support both, but you
 might want to write a different driver for each.
-
-**Your code assumes a single build method, such as `idf.py`**. Although `GNU make`
-build method is considered as legacy, it is still a supported build method.
-The CI builds your code twice; with `idf.py` and with `GNU make`. Both must be
-successful. In ESP8266 RTOS SDK, `idf.py` is lagged behind from the one in
-`esp-idf`. For ESP8266 target, the CI builds examples with `GNU make` only.
 
 Check return codes (most of functions in `esp-idf`), return values (e.g.
 `malloc(3)`), or `errno` (e.g. some standard C functions).  Propagate the
@@ -397,10 +321,9 @@ fail:
 }
 ```
 
-Note that newer `esp-idf` supports useful macros for error handling, such as
-`ESP_GOTO_ON_ERROR` (see
-[Error Handling](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/error-handling.html)),
-but older versions do not have them yet.
+> [!NOTE]
+> `esp-idf` supports useful macros for error handling, such as > `ESP_GOTO_ON_ERROR` (see
+> [Error Handling](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/error-handling.html)).
 
 Check given arguments in functions, and return an appropriate error from one
 of predefined errors (see
@@ -451,23 +374,6 @@ keywords, the referenced Issue or Pull Request will be closed. See [Linking a
 pull request to an issue using a keyword](https://docs.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword)
 for the supported keywords.
 
-### Updating README.md
-
-Each component has a `.eil.yml` file in its component directory. The file is a
-metadata file of the component. If you change the file, you need to update the
-`README.md` in the project root directory. The `README.md` is generated from
-the metadata and a template.
-
-```console
-./devtools/devtool.py --repo=. render
-```
-
-See also [`Metadata.md`](Metadata.md).
-
-If the code is target-independent, specify all the targets (see
-[devtools/targets.yml](devtools/targets.yml)) in `.eil.yml`. The
-`esp_idf_lib_helpers.h` has some useful macros.
-
 ### Creating a Pull Request
 
 To test your code, you need to create a Pull Request. It is not practical to
@@ -495,9 +401,7 @@ Before creating a Pull Request, make sure:
 
 When a PR is created, GitHub Actions workflows will:
 
-* label the PR with various labels, such as type of the PR (bug fix, or
-  feature)
-* perform necessary tests depending on the changes (build the examples in a
+* Perform necessary tests depending on the changes (build the examples in a
   matrix if the source code is modified, build the documentation if files
   under `docs` are modified)
 
@@ -514,7 +418,7 @@ syntax error.
 ```console
 git add path/to/file
 git commmit -v
-git rebase -i master
+git rebase -i main
 ```
 
 `-i`, or `--interactive`, flag will launch a text editor where the history of
