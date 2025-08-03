@@ -23,13 +23,13 @@ repository.
 
 ## Questions or discussions
 
-For questions or discussions, use [discussions](../../discussions) in this
+For questions or discussions, use [discussions](https://github.com/esp-idf-lib/core/discussions) in this
 repository.
 
 ## Documentation
 
-- [How to contribute to `esp-idf-lib`](CONTRIBUTING.md)
-- [Frequently asked questions](FAQ.md)
+- [How to contribute to `esp-idf-lib`](https://github.com/esp-idf-lib/core/blob/main/CONTRIBUTING.md)
+- [Frequently asked questions](https://github.com/esp-idf-lib/core/blob/main/FAQ.md)
 
 ## Requesting new driver
 
