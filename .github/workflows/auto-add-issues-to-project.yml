@@ -1,0 +1,20 @@
+---
+name: Add issues to project
+# Adds all issues that don't include specific labels (see labeled)
+# https://github.com/actions/add-to-project
+
+on:
+  issues:
+    types: opened
+
+jobs:
+  add-to-project:
+    name: Add issue to project
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/add-to-project@RELEASE_VERSION
+        with:
+          project-url: https://github.com/orgs/esp-idf-lib/projects/2
+          github-token: ${{ secrets.AUTO_ADD_ISSUES_TO_PROJECT }}
+          labeled: bug, documentation, ci, enhancement
+          label-operator: NOT
