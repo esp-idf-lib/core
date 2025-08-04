@@ -23,13 +23,13 @@ repository.
 
 ## Questions or discussions
 
-For questions or discussions, use [discussions](../../discussions) in this
+For questions or discussions, use [discussions](https://github.com/esp-idf-lib/core/discussions) in this
 repository.
 
 ## Documentation
 
-- [How to contribute to `esp-idf-lib`](CONTRIBUTING.md)
-- [Frequently asked questions](FAQ.md)
+- [How to contribute to `esp-idf-lib`](https://github.com/esp-idf-lib/core/blob/main/CONTRIBUTING.md)
+- [Frequently asked questions](https://github.com/esp-idf-lib/core/blob/main/FAQ.md)
 
 ## Requesting new driver
 
@@ -45,10 +45,10 @@ Part of them ported from [esp-open-rtos](https://github.com/SuperHouse/esp-open-
 <% groups.each do |group| %>
 ### <%= group["description"] %>
 
-| Name | Description | Status |
-|------|-------------|--------|
+| Name | Description |
+|------|-------------|
 <% components.select { |c| c.group_of? group["name"] }.each do |c| %>
-| [<%= c.name %>](<%= c.repo_url %>) | <%= c.description %> ([Documentation](<%= c.doc_url %>)) <%= c.badge_esp_component_registry %> | <%= c.badge("build.yml") %> <%= c.badge("build-docs.yml") %> <%= c.badge("validate-component.yml") %> <%= c.badge("validate-astyle.yml") %>|
+| [<%= c.name %>](<%= c.repo_url %>) <br> <%= c.badge_esp_component_registry %> | <%= c.description %> ([Documentation](<%= c.doc_url %>)) |
 <% end %>
 
 <% end %>

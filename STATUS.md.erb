@@ -1,0 +1,11 @@
+# Component status
+
+<% groups.each do |group| %>
+## <%= group["description"] %>
+
+| Name | Status |
+|------|--------|
+<% components.select { |c| c.group_of? group["name"] }.each do |c| %>
+| [<%= c.name %>](<%= c.repo_url %>) | <%= c.badge_esp_component_registry %><%= c.badge("build.yml") %><%= c.badge("build-docs.yml") %><%= c.badge("validate-component.yml") %><%= c.badge("validate-astyle.yml") %>|
+<% end %>
+<% end %>

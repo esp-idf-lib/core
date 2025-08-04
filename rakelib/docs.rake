@@ -29,31 +29,38 @@ def person_contribution(person)
   person.contributed_components.map { |c| "`#{c.name}`" }.join(" ")
 end
 
-def erb
-  template_file = "README.md.erb"
+def erb(template_file)
   ERB.new(File.read(template_file), trim_mode: "<>")
 end
 
-# Generate Markdown from `README.md.erb`.
-#
-# ```sh
-# bundle exec rake readme
-# ```
-desc "Generate README.md"
-task :readme do
-  puts erb.result
-end
+namespace :docs do
+  desc "Generate status page"
+  task :status do
+    puts erb("STATUS.md.erb").result
+  end
 
-# Generate HTML from `README.md.erb`.
-#
-# ```sh
-# bundle exec rake readme:html
-# ```
-namespace :readme do
-  desc "Generate README.html"
-  task :html do
-    renderer = Redcarpet::Render::HTML.new(prettify: true)
-    markdown = Redcarpet::Markdown.new(renderer, fenced_code_blocks: true, tables: true)
-    puts markdown.render(erb.result)
+  # Generate Markdown from `README.md.erb`.
+  #
+  # ```sh
+  # bundle exec rake docss:readme
+  # ```
+  desc "Generate README.md"
+  task :readme do
+    puts erb("README.md.erb").result
+  end
+
+  namespace :readme do
+
+    # Generate HTML from `README.md.erb`.
+    #
+    # ```sh
+    # bundle exec rake docs:readme:html
+    # ```
+    desc "Generate README.html"
+    task :html do
+      renderer = Redcarpet::Render::HTML.new(prettify: true)
+      markdown = Redcarpet::Markdown.new(renderer, fenced_code_blocks: true, tables: true)
+      puts markdown.render(erb("README.md.erb").result)
+    end
   end
 end
