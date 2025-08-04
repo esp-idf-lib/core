@@ -7,12 +7,58 @@ on:
       - main
 
 permissions:
-  # required by actions/deploy-pages used in build-docs.yml
+  # required by actions/deploy-pages
   pages: write
   id-token: write
 
 jobs:
-  build-docs:
-    uses: esp-idf-lib/shared-workflows/.github/workflows/build-docs.yml@main
-    with:
-      publish: true
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install package requirements
+        run: |
+          sudo apt update
+          sudo apt-get install make
+
+      - name: Setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: "pip"
+          cache-dependency-path: docs/requirements.txt
+
+      - name: Install python packages
+        run: |
+          pip install -r docs/requirements.txt
+
+      - name: Build the docs
+        run: |
+          echo "sphinx version:  `sphinx-build --version`"
+          make -C docs html
+
+      - name: Upload HTML files as artifact
+        if: ${{ inputs.publish }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/_build/html/
+
+  deploy:
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
