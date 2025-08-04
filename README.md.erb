@@ -14,7 +14,7 @@ The purpose of the repository is:
 
 * Documenting common policies and rules
 * Discussions about our components
-* Linking all the components
+* Linking all the components and their [status](https://esp-idf-lib.github.io/core/status.html)
 
 ## Reporting issues in our component
 
