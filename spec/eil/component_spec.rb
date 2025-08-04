@@ -18,7 +18,7 @@ RSpec.describe EIL::Component do
 
     context "when the component exists" do
       it "does not raise" do
-        expect { described_class.new("esp_idf_lib_helpers") }.not_to raise_error ArgumentError
+        expect { described_class.new("esp_idf_lib_helpers") }.not_to raise_error
       end
     end
   end
