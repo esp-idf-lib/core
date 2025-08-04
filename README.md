@@ -10,7 +10,7 @@ This is the core repository of [esp-idf-lib](https://github.com/esp-idf-lib/). T
 
 ## Purpose
 
-The purpose of the repository is:
+The purpose of [esp-idf-lib/core](https://github.com/esp-idf-lib/core)is:
 
 * Documenting common policies and rules
 * Discussions about our components
