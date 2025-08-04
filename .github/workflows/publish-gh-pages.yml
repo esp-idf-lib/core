@@ -3,8 +3,8 @@ name: Publish documentation
 on:
   workflow_dispatch:
   push:
-  branch:
-    - main
+    branches:
+      - main
 
 permissions:
   # required by actions/deploy-pages used in build-docs.yml
