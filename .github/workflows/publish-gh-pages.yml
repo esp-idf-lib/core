@@ -1,0 +1,18 @@
+---
+name: Publish documentation
+on:
+  workflow_dispatch:
+  push:
+  branch:
+    - main
+
+permissions:
+  # required by actions/deploy-pages used in build-docs.yml
+  pages: write
+  id-token: write
+
+jobs:
+  build-docs:
+    uses: esp-idf-lib/shared-workflows/.github/workflows/build-docs.yml@main
+    with:
+      publish: true

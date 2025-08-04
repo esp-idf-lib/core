@@ -60,7 +60,7 @@ bundle install
 
 ### Generating README.md
 
-Run `readme` target to generate `README.md` from `README.md.erb`.
+Run `docs:readme` target to generate `README.md` from `README.md.erb`.
 `README.md.erb` is the template to generate `README.md`.
 
 > [!CAUTION]
@@ -70,7 +70,7 @@ Run `readme` target to generate `README.md` from `README.md.erb`.
 > A workflow verifies `README.md` is up-to-date. If not, the test fails.
 
 ```console
-bundle exec rake readme
+bundle exec rake docs:readme
 ```
 
 The above command outputs the generated markdown to standard out.
@@ -78,7 +78,7 @@ The above command outputs the generated markdown to standard out.
 A typical workflow to update `README.md`:
 
 1. Edit `README.md.erb`
-1. Generate `README.md` with `readme` target
+1. Generate `README.md` with `docs:readme` target
 1. Commit `README.md` and `README.md.erb`
 
 ```console
@@ -86,18 +86,18 @@ A typical workflow to update `README.md`:
 vim README.md.erb
 
 # update README.md
-bundle exec rake readme > README.md
+bundle exec rake docs:readme > README.md
 
 # commit them
 git add README.md README.md.erb
 git commit -m "update README"
 ```
 
-Use `readme:html` target to generate HTML version of `README.md` for review in
+Use `docs:readme:html` target to generate HTML version of `README.md` for review in
 a browser.
 
 ```console
-bundle exec readme:html > README.html
+bundle exec docs:readme:html > README.html
 firefox README.htnml
 rm README.html
 ```

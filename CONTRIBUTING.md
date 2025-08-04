@@ -16,7 +16,6 @@
     * [Creating an Issue](#creating-an-issue)
     * [Creating a feature branch in your fork and develop](#creating-a-feature-branch-in-your-fork-and-develop)
     * [C Code style](#c-code-style)
-    * [`markdown` Code style](#markdown-code-style)
     * [Typical issues you will face in developments](#typical-issues-you-will-face-in-developments)
     * [Writing a commit message](#writing-a-commit-message)
     * [Creating a Pull Request](#creating-a-pull-request)
@@ -180,10 +179,6 @@ git checkout -b feat-implement-foo
 Write your code. Test the code in your physical test environment.  Commit your
 changes and push them to your remote fork on GitHub.
 
-[`components/example`](components/example) has an example component, and
-[`examples/example`](examples/example) has an example application for the
-`example` component.
-
 ```console
 git add path/to/files
 git commit -v
@@ -255,40 +250,6 @@ astyle --project --recursive '*.c,*.h'
 > [validate-astyle / validate]. The log shows `diff` at the end. Apply the
 > diff to your code.
 
-### `markdown` Code style
-
-We use [the default `markdownlint` rules](https://github.com/markdownlint/markdownlint/blob/master/docs/RULES.md)
-with some non-defaults. Our style can be found in [`.mdlstyle.rb`](.mdlstyle.rb).
-
-| Rule                                 | non-default options                            |
-| ------------------------------------ | ---------------------------------------------- |
-| `MD003` - Header style               | use `#` for headers                            |
-| `MD007` - Unordered list indentation | indent with 4 spaces                           |
-| `MD013` - Line length                | ignore line length in code blocks and tables   |
-| `MD024` - Multiple headers with the same content | `allow_different_nesting` is true  |
-| `MD029` - Ordered list item prefix   | `style` is `ordered`, i.e. incremental numbers |
-
-In the CI, we use ruby version of `markdownlint`, or [`mdl`](https://rubygems.org/gems/mdl/)
-gem, but [markdownlint for node.js](https://github.com/DavidAnson/markdownlint)
-should also work.
-
-To test `markdown` style of a file, you need:
-
-* `ruby` 2.6
-* `bundler` 2.x
-
-```console
-bundle install
-bundle exec mdl path/to/file
-```
-
-The output shows path to the file, line number, and the rule.  An example
-output is shown below.
-
-```console
-examples/led_strip_spi/README.md:30: MD040 Fenced code blocks should have a language specified
-```
-
 ### Typical issues you will face in developments
 
 **Your code assumes a single target, such as `esp32`**. `esp-idf-lib` supports
@@ -300,13 +261,17 @@ preprocessor macro.
 **Your code assumes a single SDK**. `esp-idf-lib` supports `master` and stable
 versions of `esp-idf` and `ESP8266 RTOS SDK`. Generally, the SDKs retain
 backward compatibilities, but sometimes not. Make sure to use `if` C
-preprocessor macro to support different versions. [`esp_idf_lib_helpers`](components/esp_idf_lib_helpers)
+preprocessor macro to support different versions.
+[`esp_idf_lib_helpers`](https://github.com/esp-idf-lib/esp_idf_lib_helpers)
 component can help you. `ESP8266 RTOS SDK` shares many functions and
 libraries, backported from `esp-idf`, but they are not identical. `I2C`
-drivers written with [`i2cdev`](components/i2cdev) should work fine on ESP32
-and ESP8266, while SPI drivers need serious workarounds to support ESP8266.
-[`led_strip_spi`](components/led_strip_spi) attempted to support both, but you
-might want to write a different driver for each.
+drivers written with
+[`i2cdev`](https://github.com/esp-idf-lib/i2cdev)
+should work fine on ESP32 and ESP8266, while SPI drivers need serious
+workarounds to support ESP8266.
+[`led_strip_spi`](https://github.com/esp-idf-lib/led_strip_spi)
+attempted to support both, but you might want to write a different driver for
+each.
 
 Check return codes (most of functions in `esp-idf`), return values (e.g.
 `malloc(3)`), or `errno` (e.g. some standard C functions).  Propagate the
@@ -396,12 +361,10 @@ Before creating a Pull Request, make sure:
 
 1. You compiled the code and the build succeeded
 1. Functions, macros, data types are documented in the code
-1. An example application is provided under [`examples`](examples). In the
+1. An example application is provided under [`examples`]. In the
    directory, create a directory `${COMPONENT_NAME}/default`. For instance, a
    component `foo` must have `examples/foo/default`. Create an example
    application in that directory.
-1. Update [.github/labeler.yml](.github/labeler.yml). The component should
-   have a label for it.
 1. You compiled the example code and the example application ran on a
    physical device as expected and documented
 1. All files are licensed under one of [Acceptable Licenses](#acceptable-licenses)

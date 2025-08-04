@@ -19,10 +19,9 @@ jobs:
           ruby-version: "3.2"
           bundler-cache: true
 
-      - name: Generate README.md and make a diff
+      - name: Generate README.md and STATUS.md
         run: |
-          bundle exec rake readme > README.md.new
+          bundle exec rake docs:readme > README.md.new
           diff -u README.md README.md.new
-          if [ $? -ne 0 ]; then
-            exit 1
-          fi
+          bundle exec rake docs:status > STATUS.md.new
+          diff -u STATUS.md STATUS.md.new
