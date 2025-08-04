@@ -42,7 +42,6 @@ jobs:
           make -C docs html
 
       - name: Upload HTML files as artifact
-        if: ${{ inputs.publish }}
         uses: actions/upload-pages-artifact@v3
         with:
           path: docs/_build/html/
