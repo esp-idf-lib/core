@@ -16,6 +16,13 @@
 
 <!-- vim-markdown-toc -->
 
+## Requirements
+
+* ruby
+* [bundler](https://bundler.io/)
+* git
+* [gh](https://cli.github.com/)
+
 This repository is the core repository of all components. The repository has
 all the components as sub-modules.
 
@@ -31,23 +38,18 @@ Update the sub-modules.
 git submodule update --init --recursive
 ```
 
+Run `bundler`.
+
+```console
+bundle install
+```
+
 The operational workflows extensively use `rake` and `gh`.
 
 * Run `rake` command in the top-level directory of `esp-idf-lib` repository.
 * Run `gh` in the repository you are working on.
 
 Read [`gh` 101](#gh-101) section first if you are not familiar with `gh` CLI.
-
-## Requirements
-
-* ruby
-* [bundler](https://bundler.io/)
-* git
-* [gh](https://cli.github.com/)
-
-```console
-bundle install
-```
 
 > [!TIP]
 > Create an alias command to type less when executing `bundle exec`, such as
@@ -108,15 +110,15 @@ rm README.html
 ### Running commands in each component
 
 Use `submodule:each` target, which runs a shell file in each component. The
-following command runs `commit.sh` in each component.
+following command runs `status.sh` in each component.
 
 ```sh
-# commit.sh
-commit -m "a commit"
+# status.sh
+git status
 ```
 
 ```console
-bundle exec rake 'submodule:each[commit.sh]'
+bundle exec rake 'submodule:each[status.sh]'
 ```
 
 > [!NOTE]
