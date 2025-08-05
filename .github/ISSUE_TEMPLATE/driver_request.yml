@@ -5,6 +5,8 @@ description: >
   on a best-efforts basis.
 labels:
   - enhancement
+projects:
+  - esp-idf-lib/2
 body:
   - type: input
     id: product_name
