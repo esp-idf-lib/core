@@ -1,2 +1,3 @@
 *.html
 docs/_build
+.rspec_status

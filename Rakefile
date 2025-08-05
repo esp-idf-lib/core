@@ -9,8 +9,9 @@ rescue LoadError
   # ignore LoadError if gems for development are not available
 end
 
-$LOAD_PATH.unshift("lib")
 require "eil"
+# tell EIL where the root of the core repository is
+EIL.root = Pathname.new(__FILE__).parent
 
 RSpec::Core::RakeTask.new(:spec)
 RuboCop::RakeTask.new
