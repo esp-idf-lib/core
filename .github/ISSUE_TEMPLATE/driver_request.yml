@@ -68,3 +68,13 @@ body:
       description: >
         Do you know any other driver implementation? Such as a driver for
         `arduino,` other arch, or framework? Please provide URLs if you do.
+
+  - type: checkboxes
+    id: sponsor
+    attributes:
+      label: >
+        Would you sponsor the development for the driver?
+      description: >
+        Check if you will sponsor the development for the driver you are requesting.
+      options:
+        - label: Yes, I will sponsor the development.
