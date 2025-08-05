@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/esp-idf-lib/eil.git
+  revision: 3258fe73010f8a2b89842a5b3aa1928ba80e58b6
+  branch: v1.0.1
+  specs:
+    eil (1.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -61,6 +68,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  eil!
   erb
   pry
   rake
