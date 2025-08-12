@@ -3,6 +3,14 @@ name: Verify README.md is up-to-date
 
 on:
   push:
+    branches:
+      - main
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+  workflow_dispatch:
 
 jobs:
   verify-readme:
