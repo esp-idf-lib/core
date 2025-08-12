@@ -2,6 +2,12 @@
 
 This is the core repository of [esp-idf-lib](https://github.com/esp-idf-lib/). The organization is the successor of [UncleRus/esp-idf-lib](https://github.com/UncleRus/esp-idf-lib).
 
+> [!NOTE]
+>
+> When migrating from [UncleRus/esp-idf-lib](https://github.com/UncleRus/esp-idf-lib) do not add this repository as a dependency.
+> Instead, add individual components as [ESP-IDF components](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-guides/tools/idf-component-manager.html) in your `idf_component.yml`.
+> You can find all components on the [ESP Component Registry](https://components.espressif.com/components?q=namespace%3Aesp-idf-lib).
+
 ## Supported versions of frameworks and devices
 
 | Chip     | Framework        | Versions                                                                                                                                         |
@@ -10,7 +16,7 @@ This is the core repository of [esp-idf-lib](https://github.com/esp-idf-lib/). T
 
 ## Purpose
 
-The purpose of [esp-idf-lib/core](https://github.com/esp-idf-lib/core)is:
+The purpose of [esp-idf-lib/core](https://github.com/esp-idf-lib/core) is:
 
 * Documenting common policies and rules
 * Discussions about our components
