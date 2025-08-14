@@ -58,7 +58,37 @@ Read [`gh` 101](#gh-101) section first if you are not familiar with `gh` CLI.
 ## `Rakefile`
 
 `Rakefile` is a ruby version of `Makefile`. The `Rakefile` and files under
-`rakelib` implements operations to manage the repository.
+`rakelib` implements operations to manage the repository. `Rakefile` has
+targets just like `Makefile`. The implemented targets can be shown with:
+
+```console
+bundle exec rake -T
+rake clean                    # Remove any temporary products
+rake clobber                  # Remove any generated files
+rake component:each[file]     # Run sh file in each component directory
+rake component:update[name]   # Update component to main branch
+rake component:update_all     # Update all components to main branch
+rake docs:readme              # Generate README.md
+rake docs:readme:html         # Generate README.html
+rake docs:status              # Generate status page
+rake list                     # Lists all the component names
+rake release[name,part]       # Release component `name`. `part` is one of `major`, `minor`, and `patch`
+rake release_all[part]        # Release all components
+rake rubocop                  # Run RuboCop
+rake rubocop:autocorrect      # Autocorrect RuboCop offenses (only when it's safe)
+rake rubocop:autocorrect_all  # Autocorrect RuboCop offenses (safe and unsafe)
+rake spec                     # Run RSpec code examples
+```
+
+Targets may accept optional arguments. Arguments are separated by commas and
+enclosed by square brackets.
+
+```console
+bundle exec rake 'releae[foo,patch]'
+```
+
+> [!CAUTION]
+> Quote the `rake` argument to avoid shell expansion.
 
 ### Generating README.md
 
@@ -109,8 +139,8 @@ rm README.html
 
 ### Running commands in each component
 
-Use `submodule:each` target, which runs a shell file in each component. The
-following command runs `status.sh` in each component.
+Use `submodule:each` target, which runs a shell script in each component
+directory. The following command runs `status.sh` in each component.
 
 ```sh
 # status.sh
@@ -145,9 +175,6 @@ version of `esp_idf_lib_helpers` component.
 ```console
 bundle execc rake 'release[esp_idf_lib_helpers,patch]'
 ```
-
-> [!CAUTION]
-> Quote the argument to avoid shell expansion.
 
 When the release is created, a GitHub Action workflows will:
 
