@@ -11,4 +11,4 @@ end
 gem "erb"
 gem "rake"
 gem "redcarpet"
-gem "eil", git: "https://github.com/esp-idf-lib/eil.git", branch: "v1.0.1"
+gem "eil", git: "https://github.com/esp-idf-lib/eil.git", tag: "2.0.3"

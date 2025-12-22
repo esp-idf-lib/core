@@ -1,9 +1,10 @@
 GIT
   remote: https://github.com/esp-idf-lib/eil.git
-  revision: 3258fe73010f8a2b89842a5b3aa1928ba80e58b6
-  branch: v1.0.1
+  revision: bae00e619dee6b797505daf424dbf800483f50dc
+  tag: 2.0.3
   specs:
-    eil (1.0.1)
+    eil (2.0.3)
+      semantic (~> 1.5.0)
 
 GEM
   remote: https://rubygems.org/
@@ -58,6 +59,7 @@ GEM
       parser (>= 3.3.7.2)
       prism (~> 1.4)
     ruby-progressbar (1.13.0)
+    semantic (1.5.0)
     tsort (0.2.0)
     unicode-display_width (3.1.4)
       unicode-emoji (~> 4.0, >= 4.0.4)
