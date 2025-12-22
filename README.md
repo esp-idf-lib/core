@@ -294,6 +294,7 @@ Part of them ported from [esp-open-rtos](https://github.com/SuperHouse/esp-open-
   - [Zaltora](https://github.com/Zaltora) `ina3221`
   - [jsuiker](https://github.com/jsuiker) `dht`
   - [lukbieli](https://github.com/lukbieli) `bmi160`
+  - [quinkq](https://github.com/quinkq) `i2cdev`
   - [sheinz](https://github.com/sheinz) `bmp280`
   - [xyzroe](https://github.com/xyzroe) `qmi8658c`
   - zeroday `onewire`
