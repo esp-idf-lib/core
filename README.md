@@ -144,6 +144,7 @@ Part of them ported from [esp-open-rtos](https://github.com/SuperHouse/esp-open-
 
 | Name | Description |
 |------|-------------|
+| [ags10](https://github.com/esp-idf-lib/ags10) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/ags10/badge.svg)](https://components.espressif.com/components/esp-idf-lib/ags10) | Driver for AGS10 TVOC sensor ([Documentation](https://esp-idf-lib.github.io/ags10)) |
 | [ccs811](https://github.com/esp-idf-lib/ccs811) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/ccs811/badge.svg)](https://components.espressif.com/components/esp-idf-lib/ccs811) | Driver for AMS CCS811 digital gas sensor ([Documentation](https://esp-idf-lib.github.io/ccs811)) |
 | [mhz19b](https://github.com/esp-idf-lib/mhz19b) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/mhz19b/badge.svg)](https://components.espressif.com/components/esp-idf-lib/mhz19b) | Driver for MH-Z19B NDIR CO₂ sensor ([Documentation](https://esp-idf-lib.github.io/mhz19b)) |
 | [scd30](https://github.com/esp-idf-lib/scd30) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/scd30/badge.svg)](https://components.espressif.com/components/esp-idf-lib/scd30) | Driver for SCD30 CO₂ sensor ([Documentation](https://esp-idf-lib.github.io/scd30)) |
@@ -155,6 +156,7 @@ Part of them ported from [esp-open-rtos](https://github.com/SuperHouse/esp-open-
 
 | Name | Description |
 |------|-------------|
+| [ags10](https://github.com/esp-idf-lib/ags10) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/ags10/badge.svg)](https://components.espressif.com/components/esp-idf-lib/ags10) | Driver for AGS10 TVOC sensor ([Documentation](https://esp-idf-lib.github.io/ags10)) |
 | [ccs811](https://github.com/esp-idf-lib/ccs811) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/ccs811/badge.svg)](https://components.espressif.com/components/esp-idf-lib/ccs811) | Driver for AMS CCS811 digital gas sensor ([Documentation](https://esp-idf-lib.github.io/ccs811)) |
 | [mhz19b](https://github.com/esp-idf-lib/mhz19b) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/mhz19b/badge.svg)](https://components.espressif.com/components/esp-idf-lib/mhz19b) | Driver for MH-Z19B NDIR CO₂ sensor ([Documentation](https://esp-idf-lib.github.io/mhz19b)) |
 | [scd30](https://github.com/esp-idf-lib/scd30) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/scd30/badge.svg)](https://components.espressif.com/components/esp-idf-lib/scd30) | Driver for SCD30 CO₂ sensor ([Documentation](https://esp-idf-lib.github.io/scd30)) |
@@ -296,5 +298,5 @@ Part of them ported from [esp-open-rtos](https://github.com/SuperHouse/esp-open-
   - [lukbieli](https://github.com/lukbieli) `bmi160`
   - [quinkq](https://github.com/quinkq) `i2cdev`
   - [sheinz](https://github.com/sheinz) `bmp280`
-  - [xyzroe](https://github.com/xyzroe) `qmi8658c`
+  - [xyzroe](https://github.com/xyzroe) `ags10` `qmi8658c`
   - zeroday `onewire`

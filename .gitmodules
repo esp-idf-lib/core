@@ -283,3 +283,6 @@
 [submodule "components/bmi160"]
 	path = components/bmi160
 	url = git@github.com:esp-idf-lib/bmi160.git
+[submodule "components/ags10"]
+	path = components/ags10
+	url = git@github.com:esp-idf-lib/ags10.git
