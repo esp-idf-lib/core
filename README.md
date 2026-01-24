@@ -64,7 +64,6 @@ Part of them ported from [esp-open-rtos](https://github.com/SuperHouse/esp-open-
 
 | Name | Description |
 |------|-------------|
-| [bmi160](https://github.com/esp-idf-lib/bmi160) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/bmi160/badge.svg)](https://components.espressif.com/components/esp-idf-lib/bmi160) | A template for esp-idf-lib component ([Documentation](https://esp-idf-lib.github.io/bmi160)) |
 | [calibration](https://github.com/esp-idf-lib/calibration) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/calibration/badge.svg)](https://components.espressif.com/components/esp-idf-lib/calibration) | Multi-point calibration library ([Documentation](https://esp-idf-lib.github.io/calibration)) |
 | [color](https://github.com/esp-idf-lib/color) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/color/badge.svg)](https://components.espressif.com/components/esp-idf-lib/color) | Common library for RGB and HSV colors ([Documentation](https://esp-idf-lib.github.io/color)) |
 | [esp_idf_lib_helpers](https://github.com/esp-idf-lib/esp_idf_lib_helpers) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/esp_idf_lib_helpers/badge.svg)](https://components.espressif.com/components/esp-idf-lib/esp_idf_lib_helpers) | Common support library for esp-idf-lib ([Documentation](https://esp-idf-lib.github.io/esp_idf_lib_helpers)) |
@@ -240,6 +239,7 @@ Part of them ported from [esp-open-rtos](https://github.com/SuperHouse/esp-open-
 
 | Name | Description |
 |------|-------------|
+| [bmi160](https://github.com/esp-idf-lib/bmi160) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/bmi160/badge.svg)](https://components.espressif.com/components/esp-idf-lib/bmi160) | Driver for BMI160 ultra-small, low power, low noise 16 bit IMU ([Documentation](https://esp-idf-lib.github.io/bmi160)) |
 | [icm42670](https://github.com/esp-idf-lib/icm42670) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/icm42670/badge.svg)](https://components.espressif.com/components/esp-idf-lib/icm42670) | Driver for TDK ICM-42670-P 6-Axis IMU ([Documentation](https://esp-idf-lib.github.io/icm42670)) |
 | [l3gx](https://github.com/esp-idf-lib/l3gx) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/l3gx/badge.svg)](https://components.espressif.com/components/esp-idf-lib/l3gx) | Driver for L3Gx(L3GD20/L3G4200D) 3-axis gyroscope sensors ([Documentation](https://esp-idf-lib.github.io/l3gx)) |
 | [lsm303](https://github.com/esp-idf-lib/lsm303) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/lsm303/badge.svg)](https://components.espressif.com/components/esp-idf-lib/lsm303) | Driver for LSM303 3-axis accelerometer and magnetometer sensor ([Documentation](https://esp-idf-lib.github.io/lsm303)) |
@@ -291,7 +291,7 @@ Part of them ported from [esp-open-rtos](https://github.com/SuperHouse/esp-open-
   - [Sensirion AG](https://github.com/Sensirion) `scd30` `scd4x` `sfa3x`
   - [Thanh Pham](https://github.com/panoti) `pcf8591`
   - [Timofei Korostelev](https://github.com/chudsaviet) `ht16k33`
-  - [Tomoyuki Sakurai](https://github.com/trombik) `bmi160` `dps310` `esp_idf_lib_helpers` `example` `led_strip_spi` `lm75`
+  - [Tomoyuki Sakurai](https://github.com/trombik) `dps310` `esp_idf_lib_helpers` `example` `led_strip_spi` `lm75`
   - [Weslley Duarte](https://github.com/weslleymfd) `ads130e08`
   - [Zaltora](https://github.com/Zaltora) `ina3221`
   - [jsuiker](https://github.com/jsuiker) `dht`
