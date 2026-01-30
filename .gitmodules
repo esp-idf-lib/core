@@ -112,9 +112,6 @@
 [submodule "components/lc709203f"]
 	path = components/lc709203f
 	url = git@github.com:esp-idf-lib/lc709203f.git
-[submodule "components/led_strip"]
-	path = components/led_strip
-	url = git@github.com:esp-idf-lib/led_strip.git
 [submodule "components/led_strip_spi"]
 	path = components/led_strip_spi
 	url = git@github.com:esp-idf-lib/led_strip_spi.git
