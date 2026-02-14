@@ -283,3 +283,6 @@
 [submodule "components/ags10"]
 	path = components/ags10
 	url = git@github.com:esp-idf-lib/ags10.git
+[submodule "components/mcp7940"]
+	path = components/mcp7940
+	url = git@github.com:esp-idf-lib/mcp7940.git

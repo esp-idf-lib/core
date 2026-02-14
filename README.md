@@ -80,6 +80,7 @@ Part of them ported from [esp-open-rtos](https://github.com/SuperHouse/esp-open-
 | [ds1302](https://github.com/esp-idf-lib/ds1302) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/ds1302/badge.svg)](https://components.espressif.com/components/esp-idf-lib/ds1302) | Driver for DS1302 RTC module ([Documentation](https://esp-idf-lib.github.io/ds1302)) |
 | [ds1307](https://github.com/esp-idf-lib/ds1307) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/ds1307/badge.svg)](https://components.espressif.com/components/esp-idf-lib/ds1307) | Driver for DS1307 RTC module ([Documentation](https://esp-idf-lib.github.io/ds1307)) |
 | [ds3231](https://github.com/esp-idf-lib/ds3231) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/ds3231/badge.svg)](https://components.espressif.com/components/esp-idf-lib/ds3231) | Driver for DS1337 RTC and DS3231 high precision RTC module ([Documentation](https://esp-idf-lib.github.io/ds3231)) |
+| [mcp7940](https://github.com/esp-idf-lib/mcp7940) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/mcp7940/badge.svg)](https://components.espressif.com/components/esp-idf-lib/mcp7940) | Driver for MCP7940 RTC module ([Documentation](https://esp-idf-lib.github.io/mcp7940)) |
 | [pcf8563](https://github.com/esp-idf-lib/pcf8563) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/pcf8563/badge.svg)](https://components.espressif.com/components/esp-idf-lib/pcf8563) | Driver for PCF8563 (BM8563) real-time clock/calendar ([Documentation](https://esp-idf-lib.github.io/pcf8563)) |
 
 ### Humidity sensors
@@ -272,7 +273,7 @@ Part of them ported from [esp-open-rtos](https://github.com/SuperHouse/esp-open-
   - [Grupo de Pesquisa em Cultura Digital](http://gepid.upf.br/) `mpu6050`
   - GrzegorzH `ds18x20`
   - [Gunar Schorcht](https://github.com/gschorcht) `bme680` `ccs811` `sht3x` `sts3x`
-  - [Jakub Turek](https://github.com/QB4-dev) `impulse_sensor` `l3gx` `lsm303` `pca9632`
+  - [Jakub Turek](https://github.com/QB4-dev) `impulse_sensor` `l3gx` `lsm303` `mcp7940` `pca9632`
   - [Jan Veeh](https://github.com/janveeh) `icm42670`
   - [Jeff Rowberg](https://www.i2cdevlib.com/) `mpu6050`
   - [Jose Manuel Perez](https://github.com/jmpmscorp) `lc709203f` `sgm58031`
