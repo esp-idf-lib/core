@@ -264,6 +264,7 @@ Part of them ported from [esp-open-rtos](https://github.com/SuperHouse/esp-open-
   - [BhuvanchandraD](https://github.com/bhuvanchandra) `ds3231`
   - [Brian Schwind](https://github.com/bschwind) `tsl2561` `tsl4531`
   - [Cedric von Gunten](https://github.com/vonguced) `qmp6988`
+  - [Chris Leishman](https://github.com/cleishm) `encoder`
   - [Christian Skjerning](https://github.com/slimcdk) `sts3x`
   - [David Douard](https://github.com/douardda) `mhz19b`
   - [Erriez](https://github.com/Erriez) `mhz19b`
