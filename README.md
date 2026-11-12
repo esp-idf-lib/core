@@ -151,7 +151,7 @@ Part of them ported from [esp-open-rtos](https://github.com/SuperHouse/esp-open-
 | [scd30](https://github.com/esp-idf-lib/scd30) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/scd30/badge.svg)](https://components.espressif.com/components/esp-idf-lib/scd30) | Driver for SCD30 CO₂ sensor ([Documentation](https://esp-idf-lib.github.io/scd30)) |
 | [scd4x](https://github.com/esp-idf-lib/scd4x) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/scd4x/badge.svg)](https://components.espressif.com/components/esp-idf-lib/scd4x) | Driver for SCD40/SCD41 miniature CO₂ sensor ([Documentation](https://esp-idf-lib.github.io/scd4x)) |
 | [sfa3x](https://github.com/esp-idf-lib/sfa3x) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/sfa3x/badge.svg)](https://components.espressif.com/components/esp-idf-lib/sfa3x) | Driver for SFA30 formaldehyde detection module (I2C) ([Documentation](https://esp-idf-lib.github.io/sfa3x)) |
-| [sgp40](https://github.com/esp-idf-lib/sgp40) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/sgp40/badge.svg)](https://components.espressif.com/components/esp-idf-lib/sgp40) | Driver for SGP40 Indoor Air Quality Sensor for VOC Measurements ([Documentation](https://esp-idf-lib.github.io/sgp40)) |
+| [sgp40](https://github.com/esp-idf-lib/sgp40) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/sgp40/badge.svg)](https://components.espressif.com/components/esp-idf-lib/sgp40) | Driver for SGP40 / SGP41 Indoor Air Quality Sensor for VOC (& NOx) Measurements ([Documentation](https://esp-idf-lib.github.io/sgp40)) |
 
 ### Gas sensors
 
@@ -285,7 +285,7 @@ Part of them ported from [esp-open-rtos](https://github.com/SuperHouse/esp-open-
   - [Lucio Tarantino](https://github.com/dianlight) `ads111x`
   - [Manuel Markwort](https://github.com/mmarkwort) `mp2660` `tps63101x`
   - [Marc Luehr](https://github.com/th3link) `veml7700`
-  - [Michael Hegel](https://github.com/botastic)
+  - [Michael Hegel](https://github.com/botastic) `sgp40`
   - [Nate Usher](https://github.com/nated0g) `scd30`
   - Pavel Merzlyakov `ds1302`
   - [Raghav Jha](https://github.com/horsemann07) `mpu6050`
