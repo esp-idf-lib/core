@@ -48,19 +48,19 @@ and [ESP8266 RTOS SDK](https://github.com/espressif/ESP8266_RTOS_SDK).
 
 Part of them ported from [esp-open-rtos](https://github.com/SuperHouse/esp-open-rtos).
 
-<% groups.each do |group| %>
-### <%= group["description"] %>
+{% for group in groups %}
+### {{ group["description"] }}
 
 | Name | Description |
 |------|-------------|
-<% components.select { |c| c.group_of? group["name"] }.each do |c| %>
-| [<%= c.name %>](<%= c.repo_url %>) <br> <%= c.badge_esp_component_registry %> | <%= c.description %> ([Documentation](<%= c.doc_url %>)) |
-<% end %>
+{% for c in core.components_of(group["name"]) %}
+| [{{ c.name }}]({{ c.repo_url }}) <br> {{ c.badge_esp_component_registry }} | {{ c.description }} ([Documentation]({{ c.doc_url }})) |
+{% endfor %}
 
-<% end %>
+{% endfor %}
 
 ## Contributors
 
-<% persons.each do |person| %>
-  - <%= person_credit(person) %> <%= person_contribution(person) %>
-<% end %>
+{% for person in persons %}
+  - {{ person.credit }} {{ person.contribution }}
+{% endfor %}
