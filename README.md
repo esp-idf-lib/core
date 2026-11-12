@@ -72,6 +72,7 @@ Part of them ported from [esp-open-rtos](https://github.com/SuperHouse/esp-open-
 | [lib8tion](https://github.com/esp-idf-lib/lib8tion) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/lib8tion/badge.svg)](https://components.espressif.com/components/esp-idf-lib/lib8tion) | Math functions specifically designed for LED programming ([Documentation](https://esp-idf-lib.github.io/lib8tion)) |
 | [noise](https://github.com/esp-idf-lib/noise) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/noise/badge.svg)](https://components.espressif.com/components/esp-idf-lib/noise) | Noise generation functions ([Documentation](https://esp-idf-lib.github.io/noise)) |
 | [onewire](https://github.com/esp-idf-lib/onewire) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/onewire/badge.svg)](https://components.espressif.com/components/esp-idf-lib/onewire) | Bit-banging 1-Wire driver ([Documentation](https://esp-idf-lib.github.io/onewire)) |
+| [shiftregister](https://github.com/esp-idf-lib/shiftregister) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/shiftregister/badge.svg)](https://components.espressif.com/components/esp-idf-lib/shiftregister) | Generic shift register driver ([Documentation](https://esp-idf-lib.github.io/shiftregister)) |
 
 ### Real-time clocks
 
@@ -292,7 +293,7 @@ Part of them ported from [esp-open-rtos](https://github.com/SuperHouse/esp-open-
   - [Sensirion AG](https://github.com/Sensirion) `scd30` `scd4x` `sfa3x`
   - [Thanh Pham](https://github.com/panoti) `pcf8591`
   - [Timofei Korostelev](https://github.com/chudsaviet) `ht16k33`
-  - [Tomoyuki Sakurai](https://github.com/trombik) `dps310` `esp_idf_lib_helpers` `example` `led_strip_spi` `lm75`
+  - [Tomoyuki Sakurai](https://github.com/trombik) `dps310` `esp_idf_lib_helpers` `example` `led_strip_spi` `lm75` `shiftregister`
   - [Weslley Duarte](https://github.com/weslleymfd) `ads130e08`
   - [Zaltora](https://github.com/Zaltora) `ina3221`
   - [jsuiker](https://github.com/jsuiker) `dht`
