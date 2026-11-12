@@ -62,5 +62,5 @@ Part of them ported from [esp-open-rtos](https://github.com/SuperHouse/esp-open-
 ## Contributors
 
 {% for person in persons %}
-  - {{ person.credit }} {{ person.contribution }}
+  - {{ person.credit }}{{ (' ' ~ person.contribution) if person.contribution else '' }}
 {% endfor %}
