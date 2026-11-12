@@ -1,3 +1,5 @@
 *.html
 docs/_build
-.rspec_status
+__pycache__/
+.pytest_cache/
+.venv/

@@ -286,3 +286,6 @@
 [submodule "components/mcp7940"]
 	path = components/mcp7940
 	url = git@github.com:esp-idf-lib/mcp7940.git
+[submodule "components/shiftregister"]
+	path = components/shiftregister
+	url = https://github.com/esp-idf-lib/shiftregister

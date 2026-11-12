@@ -3,11 +3,13 @@
 <!-- vim-markdown-toc GFM -->
 
 * [Requirements](#requirements)
-* [`Rakefile`](#rakefile)
-    * [Generating README.md](#generating-readmemd)
+* [Repository layout](#repository-layout)
+* [`tools/cli.py`](#toolsclipy)
+    * [Generating `README.md` and `STATUS.md`](#generating-readmemd-and-statusmd)
     * [Running commands in each component](#running-commands-in-each-component)
     * [Releasing a component](#releasing-a-component)
     * [Cleaning files](#cleaning-files)
+* [Validation](#validation)
 * [`gh` 101](#gh-101)
     * [Authentication](#authentication)
     * [Basics](#basics)
@@ -18,129 +20,138 @@
 
 ## Requirements
 
-* ruby
-* [bundler](https://bundler.io/)
+* python 3.11 or later
 * git
 * [gh](https://cli.github.com/)
+
+Install the python packages once:
+
+```console
+python3 -m venv .venv
+. .venv/bin/activate
+pip install -r tools/requirements.txt
+```
+
+> [!NOTE]
+> Every command below is run from the top-level directory of the repository.
+> Activate the virtual environment first, or call `.venv/bin/python` explicitly.
+
+## Repository layout
 
 This repository is the core repository of all components. The repository has
 all the components as sub-modules.
 
-Clone the repository.
+Clone the repository and update the sub-modules.
 
 ```console
 git clone git@github.com:esp-idf-lib/core.git
+cd core
+git submodule update --init
 ```
 
-Update the sub-modules.
+The files that matter for the tooling:
+
+| Path | Purpose |
+|------|---------|
+| `components/` | component sub-modules |
+| `groups.yml` | component groups used by the generated documents |
+| `persons.yml` | contributors and their components |
+| `tools/cli.py` | command line interface |
+| `tools/eil.py` | data model: components, groups, persons |
+| `tools/templates/` | Jinja2 templates of the generated documents |
+| `docs/` | the Sphinx site published to GitHub Pages |
+
+## `tools/cli.py`
+
+All operations are sub-commands of `tools/cli.py`. Show the implemented
+commands with:
 
 ```console
-git submodule update --init --recursive
+python tools/cli.py --help
 ```
 
-Run `bundler`.
-
-```console
-bundle install
+```text
+docs readme          # Generate README.md
+docs status          # Generate STATUS.md
+docs check           # Fail when a generated document is out of date
+docs html            # Generate HTML version of README.md for review
+validate             # Validate persons.yml
+list                 # List all the component names
+clean                # Remove build files of examples
+components update    # Update one component, or all of them with --all
+components each      # Run a shell script in each component directory
+release              # Release a component
+release-all          # Release all components
 ```
 
-The operational workflows extensively use `rake` and `gh`.
+Every command accepts `--root`, the path to the repository; by default it is
+the current directory.
 
-* Run `rake` command in the top-level directory of `esp-idf-lib` repository.
-* Run `gh` in the repository you are working on.
+### Generating `README.md` and `STATUS.md`
 
-Read [`gh` 101](#gh-101) section first if you are not familiar with `gh` CLI.
-
-> [!TIP]
-> Create an alias command to type less when executing `bundle exec`, such as
-> `alias be='bundle exec'`.
-
-## `Rakefile`
-
-`Rakefile` is a ruby version of `Makefile`. The `Rakefile` and files under
-`rakelib` implements operations to manage the repository. `Rakefile` has
-targets just like `Makefile`. The implemented targets can be shown with:
-
-```console
-bundle exec rake -T
-rake clean                    # Remove any temporary products
-rake clobber                  # Remove any generated files
-rake component:each[file]     # Run sh file in each component directory
-rake component:update[name]   # Update component to main branch
-rake component:update_all     # Update all components to main branch
-rake docs:readme              # Generate README.md
-rake docs:readme:html         # Generate README.html
-rake docs:status              # Generate status page
-rake list                     # Lists all the component names
-rake release[name,part]       # Release component `name`. `part` is one of `major`, `minor`, and `patch`
-rake release_all[part]        # Release all components
-rake rubocop                  # Run RuboCop
-rake rubocop:autocorrect      # Autocorrect RuboCop offenses (only when it's safe)
-rake rubocop:autocorrect_all  # Autocorrect RuboCop offenses (safe and unsafe)
-rake spec                     # Run RSpec code examples
-```
-
-Targets may accept optional arguments. Arguments are separated by commas and
-enclosed by square brackets.
-
-```console
-bundle exec rake 'releae[foo,patch]'
-```
+`README.md` and `STATUS.md` are generated from `tools/templates/README.md.j2`
+and `tools/templates/STATUS.md.j2`.
 
 > [!CAUTION]
-> Quote the `rake` argument to avoid shell expansion.
-
-### Generating README.md
-
-Run `docs:readme` target to generate `README.md` from `README.md.erb`.
-`README.md.erb` is the template to generate `README.md`.
-
-> [!CAUTION]
-> Do NOT edit `README.md`. Edit `README.md.erb` instead.
+> Do NOT edit `README.md` or `STATUS.md`. Edit the templates instead.
 
 > [!NOTE]
-> A workflow verifies `README.md` is up-to-date. If not, the test fails.
+> A workflow verifies that the generated documents are up-to-date. If they are
+> not, the test fails.
+
+Generate a document to standard output:
 
 ```console
-bundle exec rake docs:readme
+python tools/cli.py docs readme
 ```
-
-The above command outputs the generated markdown to standard out.
 
 A typical workflow to update `README.md`:
 
-1. Edit `README.md.erb`
-1. Generate `README.md` with `docs:readme` target
-1. Commit `README.md` and `README.md.erb`
+1. Edit `tools/templates/README.md.j2`
+1. Generate `README.md` in place
+1. Commit `README.md` and the template
 
 ```console
-# edit the README.md.erb, NOT README.md
-vim README.md.erb
+# edit the template, NOT README.md
+vim tools/templates/README.md.j2
 
 # update README.md
-bundle exec rake docs:readme > README.md
+python tools/cli.py docs readme --write
 
 # commit them
-git add README.md README.md.erb
+git add README.md tools/templates/README.md.j2
 git commit -m "update README"
 ```
 
-Use `docs:readme:html` target to generate HTML version of `README.md` for review in
-a browser.
+The same applies to `STATUS.md` and `tools/templates/STATUS.md.j2`:
 
 ```console
-bundle exec docs:readme:html > README.html
-firefox README.htnml
+python tools/cli.py docs status --write
+```
+
+Use the `html` sub-command to review the result in a browser:
+
+```console
+python tools/cli.py docs html > README.html
+firefox README.html
 rm README.html
 ```
 
 > [!CAUTION]
 > Do NOT commit `README.html`.
 
+`docs check` regenerates both documents in memory and compares them with the
+committed files. It prints a unified diff and exits with a non-zero status when
+a document is stale, so it is suitable for CI:
+
+```console
+python tools/cli.py docs check
+```
+
 ### Running commands in each component
 
-Use `submodule:each` target, which runs a shell script in each component
-directory. The following command runs `status.sh` in each component.
+Use `components each`, which runs a shell script in each component directory.
+The following command runs `status.sh` in each component.
 
 ```sh
 # status.sh
@@ -148,7 +159,7 @@ git status
 ```
 
 ```console
-bundle exec rake 'submodule:each[status.sh]'
+python tools/cli.py components each status.sh
 ```
 
 > [!NOTE]
@@ -159,38 +170,74 @@ bundle exec rake 'submodule:each[status.sh]'
 > `NAME` environment variable is set to the component name so that you can use
 > it in the script.
 
-### Releasing a component
-
-Run `release` target to release a component. `release` target will:
-
-* Increment version string in `.eil.yml` and `idf_component.yml`
-* Commit the changes to `main` branch
-* Push to `origin`
-* Create release
-
-`release` targets requires two arguments, name of the component and which part
-of the version should be incremented. The following example increments `patch`
-version of `esp_idf_lib_helpers` component.
+Use `components update` to switch a component to `main` and pull it. Pass
+`--all` to update every component.
 
 ```console
-bundle execc rake 'release[esp_idf_lib_helpers,patch]'
+python tools/cli.py components update i2cdev
+python tools/cli.py components update --all
 ```
 
-When the release is created, a GitHub Action workflows will:
+### Releasing a component
+
+Run `release` to release a component. It:
+
+* increments the version in `.eil.yml` and `idf_component.yml`
+* commits the changes to the `main` branch
+* pushes to `origin`
+* creates a release with `gh release create`
+
+The command takes the component name and the part of the version to increment:
+`major`, `minor`, or `patch`. The following example increments the `patch`
+version of the `esp_idf_lib_helpers` component.
+
+```console
+python tools/cli.py release esp_idf_lib_helpers patch
+```
+
+Use `--dry-run` to see the new version without touching the repository:
+
+```console
+python tools/cli.py release esp_idf_lib_helpers patch --dry-run
+```
+
+When the release is created, GitHub Actions workflows of the component:
 
 * publish the documentation
-* publish the component on ESP Component Registry
+* publish the component on the ESP Component Registry
 
 Now, the release is published.
 
-### Cleaning files
-
-Run `clean` target to clean all the unnecessary files, such as build files of
-examples.
+Use `release-all` to release every component. It accepts the same `part` and
+`--dry-run`.
 
 ```console
-bundle exec rake clean
+python tools/cli.py release-all patch
 ```
+
+> [!CAUTION]
+> `release-all` releases all the components, which is rarely what you want.
+> Check the list of components with `python tools/cli.py list` first.
+
+### Cleaning files
+
+Run `clean` to remove build files of examples.
+
+```console
+python tools/cli.py clean
+```
+
+Use `--dry-run` to see what would be removed.
+
+## Validation
+
+```console
+python tools/cli.py validate      # persons.yml
+python tools/cli.py docs check    # README.md and STATUS.md
+python -m pytest tools/tests -q   # tests of the tooling
+```
+
+All three are run by the `Validate` workflow on every push and pull request.
 
 ## `gh` 101
 
@@ -219,7 +266,7 @@ run workflows, among others.
 
 > [!NOTE]
 > Change the directory to the repository directory and run `gh` command.
-> When the working directory is not in the repository, use `--repo es-idf-lib/${REPO_NAME}`.
+> When the working directory is not in the repository, use `--repo esp-idf-lib/${REPO_NAME}`.
 
 ```console
 cd components/esp_idf_lib_helpers
