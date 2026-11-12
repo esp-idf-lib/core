@@ -285,6 +285,7 @@ Part of them ported from [esp-open-rtos](https://github.com/SuperHouse/esp-open-
   - [Lucio Tarantino](https://github.com/dianlight) `ads111x`
   - [Manuel Markwort](https://github.com/mmarkwort) `mp2660` `tps63101x`
   - [Marc Luehr](https://github.com/th3link) `veml7700`
+  - [Michael Hegel](https://github.com/botastic)
   - [Nate Usher](https://github.com/nated0g) `scd30`
   - Pavel Merzlyakov `ds1302`
   - [Raghav Jha](https://github.com/horsemann07) `mpu6050`
