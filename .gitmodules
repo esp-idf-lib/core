@@ -289,3 +289,6 @@
 [submodule "components/shiftregister"]
 	path = components/shiftregister
 	url = https://github.com/esp-idf-lib/shiftregister
+[submodule "components/pca953x"]
+	path = components/pca953x
+	url = https://github.com/esp-idf-lib/pca953x
