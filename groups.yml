@@ -38,6 +38,9 @@
 - name: led
   description: LED drivers
 
+- name: display
+  description: Displays and font rendering
+
 - name: input
   description: Input device drivers
 
