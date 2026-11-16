@@ -292,3 +292,6 @@
 [submodule "components/pca953x"]
 	path = components/pca953x
 	url = https://github.com/esp-idf-lib/pca953x
+[submodule "components/pixelfont"]
+	path = components/pixelfont
+	url = https://github.com/esp-idf-lib/pixelfont
