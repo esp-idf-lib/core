@@ -295,3 +295,6 @@
 [submodule "components/pixelfont"]
 	path = components/pixelfont
 	url = https://github.com/esp-idf-lib/pixelfont
+[submodule "components/max6675"]
+	path = components/max6675
+	url = https://github.com/esp-idf-lib/max6675
