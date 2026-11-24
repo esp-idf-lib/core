@@ -220,6 +220,7 @@ Part of them ported from [esp-open-rtos](https://github.com/SuperHouse/esp-open-
 | [hd44780](https://github.com/esp-idf-lib/hd44780) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/hd44780/badge.svg)](https://components.espressif.com/components/esp-idf-lib/hd44780) | Driver for HD44780 compatible LCD text displays ([Documentation](https://esp-idf-lib.github.io/hd44780)) |
 | [max7219](https://github.com/esp-idf-lib/max7219) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/max7219/badge.svg)](https://components.espressif.com/components/esp-idf-lib/max7219) | Driver for 8-Digit LED display drivers, MAX7219/MAX7221 ([Documentation](https://esp-idf-lib.github.io/max7219)) |
 | [pixelfont](https://github.com/esp-idf-lib/pixelfont) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/pixelfont/badge.svg)](https://components.espressif.com/components/esp-idf-lib/pixelfont) | Bitmap font renderer for monochrome and colour displays ([Documentation](https://esp-idf-lib.github.io/pixelfont)) |
+| [sh1106](https://github.com/esp-idf-lib/sh1106) <br> [![Component Registry](https://components.espressif.com/components/esp-idf-lib/sh1106/badge.svg)](https://components.espressif.com/components/esp-idf-lib/sh1106) | esp_lcd panel driver for the SH1106 OLED controller ([Documentation](https://esp-idf-lib.github.io/sh1106)) |
 
 ### Input device drivers
 
@@ -298,7 +299,7 @@ Part of them ported from [esp-open-rtos](https://github.com/SuperHouse/esp-open-
   - Pavel Merzlyakov `ds1302`
   - [Raghav Jha](https://github.com/horsemann07) `mpu6050`
   - RichardA `ds3231`
-  - [Ruslan V. Uss](https://github.com/UncleRus) `ads111x` `aht` `am2320` `bh1750` `bh1900nux` `bme680` `bmp180` `bmp280` `button` `calibration` `ccs811` `dht` `ds1302` `ds1307` `ds18x20` `ds3231` `ds3502` `encoder` `framebuffer` `hd44780` `hdc1000` `hmc5883l` `hx711` `i2cdev` `ina219` `ina260` `ina3221` `led_strip_spi` `max31725` `max31855` `max31865` `max6675` `max7219` `mcp23008` `mcp23x17` `mcp342x` `mcp4725` `mcp960x` `mcp9808` `mpu6050` `ms5611` `onewire` `pca953x` `pca9557` `pca9685` `pcf8563` `pcf8574` `pcf8575` `pcf8591` `pixelfont` `qmc5883l` `qmp6988` `rda5807m` `scd30` `scd4x` `sfa3x` `sgp40` `sht3x` `sht4x` `si7021` `sts21` `sts3x` `tca6424a` `tca9548` `tca95x5` `tda74xx` `tsl2561` `tsl4531` `tsys01` `ultrasonic` `wiegand`
+  - [Ruslan V. Uss](https://github.com/UncleRus) `ads111x` `aht` `am2320` `bh1750` `bh1900nux` `bme680` `bmp180` `bmp280` `button` `calibration` `ccs811` `dht` `ds1302` `ds1307` `ds18x20` `ds3231` `ds3502` `encoder` `framebuffer` `hd44780` `hdc1000` `hmc5883l` `hx711` `i2cdev` `ina219` `ina260` `ina3221` `led_strip_spi` `max31725` `max31855` `max31865` `max6675` `max7219` `mcp23008` `mcp23x17` `mcp342x` `mcp4725` `mcp960x` `mcp9808` `mpu6050` `ms5611` `onewire` `pca953x` `pca9557` `pca9685` `pcf8563` `pcf8574` `pcf8575` `pcf8591` `pixelfont` `qmc5883l` `qmp6988` `rda5807m` `scd30` `scd4x` `sfa3x` `sgp40` `sh1106` `sht3x` `sht4x` `si7021` `sts21` `sts3x` `tca6424a` `tca9548` `tca95x5` `tda74xx` `tsl2561` `tsl4531` `tsys01` `ultrasonic` `wiegand`
   - [Sensirion AG](https://github.com/Sensirion) `scd30` `scd4x` `sfa3x`
   - [Thanh Pham](https://github.com/panoti) `pcf8591`
   - [Timofei Korostelev](https://github.com/chudsaviet) `ht16k33`
