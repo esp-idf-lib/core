@@ -298,3 +298,6 @@
 [submodule "components/max6675"]
 	path = components/max6675
 	url = https://github.com/esp-idf-lib/max6675
+[submodule "components/sh1106"]
+	path = components/sh1106
+	url = git@github.com:esp-idf-lib/sh1106.git
